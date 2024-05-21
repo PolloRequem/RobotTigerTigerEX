@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &743243953964428990
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 731948940117216724, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d760526269e55b40898d45c96b2a15f, type: 3}
+    - target: {fileID: 731948940117216724, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 731948940117216724, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 731948940117216724, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_Color.r
+      value: 0.42631197
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.70969534
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.96952915
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.4946
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.5147
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.10035449
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384070869927229778, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384070869927229778, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384070869927229778, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384070869927229778, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7998848980351506774, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_Name
+      value: Blocco 4x4 Variant 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29f18808671492b4da219e4c729c6de7, type: 3}

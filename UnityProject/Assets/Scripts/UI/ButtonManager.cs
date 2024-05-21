@@ -52,9 +52,14 @@ public class ButtonManager : MonoBehaviour
 
     public void GOTO_Sim_Start()
     {
+        SceneManager.LoadScene("Sim_Start");
+    }
+    public void GOTO_Simulation()
+    {
         SceneManager.LoadScene("Simulation");
     }
 
-    
+
+
 
 }

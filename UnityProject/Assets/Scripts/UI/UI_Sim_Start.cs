@@ -223,7 +223,8 @@ public class UI_Sim_Start : MonoBehaviour
                 PlayerPrefs.SetString("_Start_MissionName", missionID.text);
                 PlayerPrefs.SetString("_Start_RobotName", missionID.text);
                 PlayerPrefs.Save();
-                SceneManager.LoadScene("Game_StartMission");
+                //  SceneManager.LoadScene("Game_StartMission");
+                SceneManager.LoadScene("_MainScene");
                 return true;
 
          

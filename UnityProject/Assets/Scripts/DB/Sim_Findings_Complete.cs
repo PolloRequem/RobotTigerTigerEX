@@ -19,8 +19,8 @@ public class Sim_Findings_Complete : MonoBehaviour
     private IEnumerator POST_RegistraFinding()
     {
         WWWForm form = new WWWForm();
-        form.AddField("missione", "3782371");// PlayerPrefs.GetString("IDMission_Started"));
-        form.AddField("materiale", "1"); // UI_Game_StartM.coloreSelezionatoID);
+        form.AddField("missione",  PlayerPrefs.GetString("IDMission_Started"));
+        form.AddField("materiale", UI_Game_StartM.coloreSelezionatoID);
         form.AddField("data", System.DateTime.Today.ToShortDateString());
         form.AddField("parziali", getIDRandoNumber());
         using (UnityWebRequest webRequest = UnityWebRequest.Post("http://localhost:8161/WebServerAPI/data/ritrovamenti", form))
@@ -33,13 +33,13 @@ public class Sim_Findings_Complete : MonoBehaviour
                 case UnityWebRequest.Result.DataProcessingError:
                 case UnityWebRequest.Result.ProtocolError:
                     Debug.LogError(String.Format("Something went wrong  {0}", webRequest.error));
-                    //GOTO_Sim_Finding_ConnectionError();
+
                     break;
                 case UnityWebRequest.Result.Success:
 
 
                     print(webRequest.downloadHandler.text);
-                   // GOTO_Sim_Finding_Complete();
+                    GOTO_Sim_Finding_Complete();
                     break;
             }
         }
@@ -54,11 +54,11 @@ public class Sim_Findings_Complete : MonoBehaviour
 
     private void GOTO_Sim_Finding_ConnectionError()
     {
-        SceneManager.LoadScene("Sim_Finding_ConnectionError");
+        SceneManager.LoadScene("Mission_Sim_Finding_ConnectionError");
     }
 
     private void GOTO_Sim_Finding_Complete()
     {
-        SceneManager.LoadScene("Sim_Finding_Complete");
+        SceneManager.LoadScene("Mission_ritrovamenti");
     }
 }

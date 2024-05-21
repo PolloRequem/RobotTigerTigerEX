@@ -6,13 +6,13 @@ using System;
 public class Event_MaterialPickedUp 
 {
     public static Event_MaterialPickedUp current;
-    public event Action<colori> onMaterialPickedUp;
+    public event Action<Colori_Enum> onMaterialPickedUp;
     
 
-    public void MaterialePiccato(colori colori)
+    public void MaterialePiccato(Colori_Enum colore)
     {
 
-        onMaterialPickedUp?.Invoke(colori);
+        onMaterialPickedUp?.Invoke(colore);
     }
    
 }

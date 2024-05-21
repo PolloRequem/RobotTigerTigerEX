@@ -16,7 +16,7 @@ public class TCPclient_RobotTigerTiger : MonoBehaviour
         GameEventManager.instance.materialPickedUp.onMaterialPickedUp += MaterialPickedUp_onMaterialPickedUp;
     
     }
-    private void MaterialPickedUp_onMaterialPickedUp(colori obj)
+    private void MaterialPickedUp_onMaterialPickedUp(Colori_Enum obj)
     {
         print(obj.ToString());
         StreamWriter writer = new StreamWriter(client.GetStream());

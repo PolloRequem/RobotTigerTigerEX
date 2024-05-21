@@ -900,7 +900,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1480081309}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: GOTO_Info
+        m_MethodName: QUIT
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

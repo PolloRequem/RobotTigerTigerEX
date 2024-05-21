@@ -31,7 +31,7 @@ public class Records_Mission : MonoBehaviour
 
     public void GOTO_Findigs()
     {
-        PlayerPrefs.SetString("ID_ritrovamenti", idIndex);
+        PlayerPrefs.SetString("IDMission_Started", idIndex);
         PlayerPrefs.Save();
      
        SceneManager.LoadScene("Mission_ritrovamenti");

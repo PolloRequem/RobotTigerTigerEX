@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class UI_Game_StartM : MonoBehaviour
 {
+    public static int coloreSelezionatoID;
 
     [SerializeField] private PlayerMov playerMov;
     [SerializeField] private PlayerHook playerHoock;
@@ -44,12 +45,15 @@ public class UI_Game_StartM : MonoBehaviour
        
     }
 
-    private void MaterialPickedUp_onMaterialPickedUp(colori obj)
+    private void MaterialPickedUp_onMaterialPickedUp(Colori_Enum obj)
     {
         colorText.text = obj.ToString();
-        colorImage.color = _colori.StringToColor(obj.ToString());
-        
+        colorImage.color = ColorMangaer.StringToColor(obj.ToString());
+
         isUnColoreScelto = true;
+
+        coloreSelezionatoID = ColorMangaer.Color_EnumTOIDMaterial(obj.ToString());
+        print(coloreSelezionatoID);
     }
 
 
@@ -60,8 +64,5 @@ public class UI_Game_StartM : MonoBehaviour
         playerMov.enabled = true;
     }
 
-    public void extSim()
-    {
-        SceneManager.LoadScene("Sim_Complete");
-    }
+   
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class MaterialsPickable : MonoBehaviour
 {
-    [SerializeField] public colori colore;
+    [SerializeField] public Colori_Enum colore;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

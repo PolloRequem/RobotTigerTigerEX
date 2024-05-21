@@ -12,14 +12,14 @@ public class Ritrovamenti {
     
     
     private String missione;
-    private String materiale;
+    private int materiale;
     private String dataInzio;
     private double parziali;
 
     public Ritrovamenti() {
     }
 
-    public Ritrovamenti(String missione, String materiale, String dataInzio, double parziali) {
+    public Ritrovamenti(String missione, int materiale, String dataInzio, double parziali) {
         this.missione = missione;
         this.materiale = materiale;
         this.dataInzio = dataInzio;
@@ -31,7 +31,7 @@ public class Ritrovamenti {
         return missione;
     }
 
-    public String getMateriale() {
+    public int getMateriale() {
         return materiale;
     }
 
@@ -47,7 +47,7 @@ public class Ritrovamenti {
         this.missione = missione;
     }
 
-    public void setMateriale(String materiale) {
+    public void setMateriale(int materiale) {
         this.materiale = materiale;
     }
 

@@ -36,7 +36,7 @@ public class RitrovamentiDAO {
            
             while (rs.next()) {
                 String missione = rs.getString("missione");
-                String materiale = rs.getString("materiale");
+                int materiale = rs.getInt("materiale");
                 String dataInizio = rs.getString("dataInizio");
                 double parziali = rs.getDouble("parziali");
              
@@ -68,7 +68,7 @@ public class RitrovamentiDAO {
            
             while (rs.next()) {
                 String missione = rs.getString("missione");
-                String materiale = rs.getString("materiale");
+                int materiale = rs.getInt("materiale");
                 String dataInizio = rs.getString("dataInizio");
                 double parziali = rs.getDouble("parziali");
              
@@ -83,5 +83,35 @@ public class RitrovamentiDAO {
         }
 
     }
+     
+      public static String addRitrovamenti(String missione,int materiale,String data,int parziali){
+    Connection cn = ConnectionDataBase.getConnection();
+
+        if (cn == null) {
+            return  "Error#1 Connection to server faild";
+        }
+
+        PreparedStatement ps;
+        try {
+          
+            
+            PreparedStatement pst = cn.prepareStatement("INSERT INTO ritrovamenti(missione,materiale,dataInizio,parziali) VALUES(?,?,?,?);");
+            pst.setString(1, missione);
+            pst.setInt(2, materiale);
+            pst.setString(3, data);
+            pst.setInt(4, parziali);
+         
+           if(pst.executeUpdate()==1){
+               return   "1";// "Mission Started!";
+           }
+           else{
+               return  "Errore#4 Data insertion error. Please try again later.";
+           }
+          
+        } catch (SQLException ex) {
+            return "Error#2 SQL exception:  "+ ex.toString();
+
+        }
+    } 
 }
 

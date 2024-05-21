@@ -62,6 +62,24 @@ public class Data_Ritrovamenti {
         return Response.ok(jsonData, MediaType.APPLICATION_JSON).build();
 
     }
+    
+     @POST
+    @Consumes("application/x-www-form-urlencoded")
+    public String addPlayer(Form form) {
+        try {
+            String missione = form.asMap().getFirst("missione");
+            int materiale = Integer.parseInt(form.asMap().getFirst("materiale"));
+            String data = form.asMap().getFirst("data");
+            int parziali = Integer.parseInt(form.asMap().getFirst("parziali"));
+          
+            
+        
+       
+            return  RitrovamentiDAO.addRitrovamenti( missione, materiale, data, parziali);
+        } catch (Exception e) {
+            return "Errore nella API";
+        }
+    }
 
    
 }

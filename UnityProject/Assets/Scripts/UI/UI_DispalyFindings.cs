@@ -1,7 +1,7 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+
 
 public class UI_DispalyFindings : MonoBehaviour
 {
@@ -25,7 +25,7 @@ public class UI_DispalyFindings : MonoBehaviour
         {
             Transform frameTranform = Instantiate(frameTemplate, transform);
             frameTranform.gameObject.SetActive(true);
-            frameTranform.GetComponent<Records_Ritrovamenti>().SetUPRecords(r.missione, r.materiale, System.DateTime.Today.ToShortDateString(), r.parziali);
+            frameTranform.GetComponent<Records_Ritrovamenti>().SetUPRecordsNoID(r.materiale,r.dataInzio, r.parziali);
 
         }
 

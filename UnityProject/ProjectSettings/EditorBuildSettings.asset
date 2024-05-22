@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Mission/Hub_Missions.unity
     guid: 84fbebee5ade26c4ea8aada3881f147b
   - enabled: 1
-    path: Assets/Scenes/SimulationStart/Hub_Simulation.unity
+    path: Assets/Scenes/Simulation/Hub_Simulation.unity
     guid: cb733467e4798f74d880cc967e7bb9d2
   - enabled: 1
     path: Assets/Scenes/Hub_Players.unity
@@ -48,13 +48,22 @@ EditorBuildSettings:
     path: Assets/Scenes/Mission/Mission_ritrovamenti.unity
     guid: a5248da5f2779fe4681ee425a4262c0c
   - enabled: 1
-    path: Assets/Scenes/SimulationStart/Simulation.unity
+    path: Assets/Scenes/Simulation/Simulation.unity
     guid: ac0b44e9c5ad25443b6378689c216095
   - enabled: 1
     path: Assets/Scenes/Mission_Sim_Findings_ConnectionError.unity
     guid: 52b11d63df530594aba74447a3a4232e
   - enabled: 1
-    path: Assets/Scenes/SimulationStart/Sim_Start.unity
+    path: Assets/Scenes/Simulation/StartFinding/ExistingMission.unity
+    guid: 6d7a41fb32015af4da964ed96d416044
+  - enabled: 1
+    path: Assets/Scenes/Simulation/StartFinding/NewMission.unity
     guid: 9eb561cb6f0c78a44813ad30a932c00b
+  - enabled: 1
+    path: Assets/Scenes/Simulation/CompleteMission/Hub_CompleteMission.unity
+    guid: b3a8f2ed75153424aa713509e63ead6f
+  - enabled: 1
+    path: Assets/Scenes/Simulation/StartFinding/Hub_StartMission.unity
+    guid: f3912289c96a9ce4ea0b54bae336e90e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

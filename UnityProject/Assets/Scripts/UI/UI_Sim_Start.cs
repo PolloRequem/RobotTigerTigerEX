@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -10,7 +9,7 @@ using System;
 
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+
 
 public class UI_Sim_Start : MonoBehaviour
 {
@@ -219,12 +218,12 @@ public class UI_Sim_Start : MonoBehaviour
         {
             case "1":
 
-                PlayerPrefs.SetString("_Start_MissionID", missionID.text);
-                PlayerPrefs.SetString("_Start_MissionName", missionID.text);
-                PlayerPrefs.SetString("_Start_RobotName", missionID.text);
+                PlayerPrefs.SetString("IDMission_Started", missionID.text);
+                PlayerPrefs.SetString("NameMission_Started", missionName.text);
+                
                 PlayerPrefs.Save();
                 //  SceneManager.LoadScene("Game_StartMission");
-                SceneManager.LoadScene("_MainScene");
+                SceneManager.LoadScene("Mission_ritrovamenti");
                 return true;
 
          

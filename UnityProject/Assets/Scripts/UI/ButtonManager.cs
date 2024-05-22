@@ -58,8 +58,25 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("Simulation");
     }
+    public void GOTO_NewMission()
+    {
+        SceneManager.LoadScene("NewMission");
+    }
+
+    public void GOTO_ExistingMission()
+    {
+        SceneManager.LoadScene("ExistingMission");
+    }
+
+    public void GOTO_Hub_StartFindings()
+    {
+        SceneManager.LoadScene("Hub_StartMission");
+    }
 
 
-
+    public void GOTO_Hub_CompleteMission()
+    {
+        SceneManager.LoadScene("Hub_CompleteMission");
+    }
 
 }

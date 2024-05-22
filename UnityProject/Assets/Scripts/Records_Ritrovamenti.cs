@@ -23,4 +23,13 @@ public class Records_Ritrovamenti : MonoBehaviour
      
     }
 
+    public void SetUPRecordsNoID(string materiale, string data, double parziali)
+    {
+       
+        text_materiale.text = materiale;
+        text_data.text = data;
+        text_parziali.text = parziali.ToString();
+
+    }
+
 }

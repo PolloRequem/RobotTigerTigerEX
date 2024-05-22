@@ -29,4 +29,25 @@ public class UI_DiplayMIsisons : MonoBehaviour
         }
 
     }
+
+    public void UpdateVisualAll(List<Mission> missions)
+    {
+        foreach (Transform child in transform)
+        {
+            if (child == frameTemplate) continue;
+            Destroy(child.gameObject);
+        }
+
+
+
+        foreach (Mission m in missions)
+        {
+            Transform frameTranform = Instantiate(frameTemplate, transform);
+            frameTranform.gameObject.SetActive(true);
+           
+            frameTranform.GetComponent<Records_Mission>().SetUPALLRecords(m.id, m.nome, m.robot, m.player, m.punteggio.ToString(), m.dataInizio, m.dataFine);
+
+        }
+
+    }
 }

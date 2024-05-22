@@ -11,14 +11,15 @@ using Newtonsoft.Json;
 public class ElencoRitrovamenti : MonoBehaviour
 {
     [SerializeField] private UI_DispalyFindings uiDiplayer;
-
+    [SerializeField] private TextMeshProUGUI missioneNameTitle;
 
 
     public void Start()
     {
         Call_GET_Ritrovamenti();
+        missioneNameTitle.text = PlayerPrefs.GetString("NameMission_Started");
 
-      
+
     }
 
     [ContextMenu("Get Missioni")]

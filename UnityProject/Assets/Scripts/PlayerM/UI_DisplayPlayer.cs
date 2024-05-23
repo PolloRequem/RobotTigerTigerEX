@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class UI_DisplayPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform frameTemplate;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        frameTemplate.gameObject.SetActive(false);
+    }
+    public void UpdateVisual(List<PlayerBean> players)
+    {
+        foreach (Transform child in transform)
+        {
+            if (child == frameTemplate) continue;
+            Destroy(child.gameObject);
+        }
+
+
+
+        foreach (PlayerBean p in players)
+        {
+            Transform frameTranform = Instantiate(frameTemplate, transform);
+            frameTranform.gameObject.SetActive(true);
+            frameTranform.GetComponent<Record_Player>().SetUPRecords(p.id, p.username, p.role, p.email);
+
+        }
+
     }
 }

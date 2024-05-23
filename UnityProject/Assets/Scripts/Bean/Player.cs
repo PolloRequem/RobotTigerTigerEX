@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class Pl : MonoBehaviour
+public class PlayerBean 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int id {  get;  private  set; }
+    public string username { get; private set; }
+    public string role  { get; private set; }
+    public string email { get; private set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

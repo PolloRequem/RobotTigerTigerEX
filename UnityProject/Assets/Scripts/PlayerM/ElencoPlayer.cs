@@ -44,6 +44,10 @@ public class ElencoPlayer : MonoBehaviour
                 case UnityWebRequest.Result.Success:
 
                     List<PlayerBean> playerJson = JsonConvert.DeserializeObject<List<PlayerBean>>(webRequest.downloadHandler.text);
+                   foreach(PlayerBean p in playerJson)
+                    {
+                        p.toString();
+                    }
                     uiDiplayer.UpdateVisual(playerJson);
 
                     break;

@@ -5,10 +5,14 @@ using System;
 
 public class PlayerBean 
 {
-    public int id {  get;  private  set; }
-    public string username { get; private set; }
-    public string role  { get; private set; }
-    public string email { get; private set; }
+    public int id {  get;  set; }
+    public string username { get;set; }
+    public string role  { get;  set; }
+    public string email { get;  set; }
 
+    public string toString()
+    {
+        return "Player{" + "id=" + id + ", username=" + username + ", role=" + role + ", email=" + email + '}';
+    }
 
 }

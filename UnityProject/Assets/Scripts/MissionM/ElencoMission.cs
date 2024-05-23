@@ -45,7 +45,15 @@ public class ElencoMission : MonoBehaviour
 
                     List<Mission> missionsJson = JsonConvert.DeserializeObject<List<Mission>>(webRequest.downloadHandler.text);
 
-                    uiDiplayer.UpdateVisual(TogliCompletati(missionsJson));
+                    if (RoleManger.isPlayerAdmin())
+                    {
+                        uiDiplayer.UpdateVisual(TogliCompletati(missionsJson));
+                    }
+                    else
+                    {
+                        uiDiplayer.UpdateVisual(TogliCompletatiEthisUser(missionsJson));
+                    }
+                   
 
                     break;
             }

@@ -2,23 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/DAO/RobotsListDAO.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/DAO/MissionListDAO.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/DAO/RegistraDAO.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/dataAPI/Data_MissionsSerial.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/Bean/Robot.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/DAO/LoginDAO.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/authenticatorAPI/Authentication_RegistrationAPI.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/dataAPI/Data_Robots.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/DAO/ConnectionDataBase.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/web/index1.html</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/dataAPI/Data_Missions.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/authenticatorAPI/WebService.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/web/index.html</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/Bean/Seriale_Mission.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/Bean/Mission.java</file>
-            <file>file:/D:/Java/NetBeansProjects/WebServerAPI/src/java/authenticatorAPI/Authentication_LoginAPI.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

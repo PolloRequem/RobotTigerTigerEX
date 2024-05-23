@@ -56,6 +56,7 @@ public class Login : MonoBehaviour
                 return true;
                 
             case "2":
+                print("admin");
                 AdminLoggato();
                 return true;
 

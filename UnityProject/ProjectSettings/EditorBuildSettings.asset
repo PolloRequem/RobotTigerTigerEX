@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PreLogin/MainScene.unity
     guid: b34aa0de49c800648a27545fc2d4cfd4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prove/GameScene1.unity
     guid: 6bcd5d12fefcdba40aa3e80402cdbaba
   - enabled: 1
@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Simulation/Hub_Simulation.unity
     guid: cb733467e4798f74d880cc967e7bb9d2
   - enabled: 1
-    path: Assets/Scenes/Hub_Players.unity
+    path: Assets/Scenes/Players/Hub_Players.unity
     guid: 64d36f867c2cbc64993c9538f93f4bc8
   - enabled: 1
     path: Assets/Scenes/_MainScene.unity

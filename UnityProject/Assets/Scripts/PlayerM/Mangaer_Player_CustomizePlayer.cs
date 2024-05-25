@@ -29,11 +29,13 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
     [SerializeField] private GameObject button_ChangeRole;
     [SerializeField] private Button button_ResetPassword;
 
-
+    [Header("Errori")]
+    [SerializeField] private TextMeshProUGUI errorMessage;
 
     private PlayerBean newPlayer;
 
-
+    private bool isChangeRuoloPressed;
+    private bool is 
     private void Start()
     {
      
@@ -44,7 +46,7 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
 
         button_ResetPassword.interactable = false;
 
-        print(JsonConvert.SerializeObject(newPlayer));
+       
     }
 
 
@@ -82,6 +84,7 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
     public void Button_ChangePassword()
     {
         GO_changePassword.SetActive(true);
+
     }
 
 
@@ -92,9 +95,11 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
     }
     private IEnumerator PUT_ChangePlayer()
     {
-
-        using (UnityWebRequest webRequest = UnityWebRequest.Put("http://localhost:8161/WebServerAPI/data/players", JsonConvert.SerializeObject(newPlayer).ToString()))
+        print(JsonConvert.SerializeObject(newPlayer).ToString());
+        print(JsonConvert.SerializeObject(newPlayer));
+        using (UnityWebRequest webRequest = UnityWebRequest.Put("http://localhost:8161/WebServerAPI/data/players", JsonConvert.SerializeObject(newPlayer)))
         {
+            webRequest.SetRequestHeader("Content-Type", "application/json");
             yield return webRequest.SendWebRequest();
 
             switch (webRequest.result)
@@ -107,11 +112,21 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
                     break;
                 case UnityWebRequest.Result.Success:
 
-                    print(webRequest.downloadHandler.text);
-                   
+                    
+
 
                     break;
             }
         }
     }
+
+    private void analizzaRisposta(string riposta)
+    {
+        if(riposta == "1")
+        {
+            SceneManager.LoadScene("Hub_Players");
+        }
+    }
+
+    
 }

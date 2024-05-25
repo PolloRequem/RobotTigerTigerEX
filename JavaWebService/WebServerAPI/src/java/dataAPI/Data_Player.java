@@ -51,12 +51,13 @@ public class Data_Player {
     }
     
     @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON_PATCH_JSON)
     public Response PUT_Dipendente(Player player) {
         try {
            
-          String risposta = PlayerDAO.modifyPlayer(player.getId() , player.getUsername() , player.getEmail() , player.getRole());
+          String risposta = PlayerDAO.modifyPlayer(player.getId() , player.getUsername() ,  player.getRole(),player.getEmail());
           return Response.ok(risposta).build();
+      
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }

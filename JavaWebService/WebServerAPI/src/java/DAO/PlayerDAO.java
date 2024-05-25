@@ -84,7 +84,7 @@ public class PlayerDAO {
         PreparedStatement ps;
         try {
 
-            ps = cn.prepareStatement("UPDATE `players` SET `id`='?',`username`='?',`role`='?',`email`='?',`hash`='?',`salt`='?' WHERE ?");
+            ps = cn.prepareStatement("UPDATE `players` SET `id`=?, `username`=?,`role`=?,`email`=?  WHERE id=?");
 
             ps.setInt(1, id);
             ps.setString(2, username);
@@ -98,8 +98,8 @@ public class PlayerDAO {
                 return "Errore#4 Data insertion error. Please try again later.";
             }
 
-        } catch (SQLException ex) {
-            return ex.toString();
+        } catch (SQLException ex ) {
+            return "2";
 
         }
     }

@@ -8,8 +8,10 @@ import Bean.Player;
 import DAO.PlayerDAO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.MediaType;
@@ -47,5 +49,16 @@ public class Data_Player {
 
         return Response.status(Response.Status.ACCEPTED).build();
     }
-
+    
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response PUT_Dipendente(Player player) {
+        try {
+           
+          String risposta = PlayerDAO.modifyPlayer(player.getId() , player.getUsername() , player.getEmail() , player.getRole());
+          return Response.ok(risposta).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 }

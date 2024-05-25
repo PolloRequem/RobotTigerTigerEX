@@ -73,4 +73,35 @@ public class PlayerDAO {
 
         }
      }
-}
+     
+     public static String modifyPlayer(int id , String username ,String role, String email){
+         
+ Connection cn = ConnectionDataBase.getConnection();
+
+        if (cn == null) {
+            return "Connection Lost";
+        }
+        PreparedStatement ps;
+        try {
+
+            ps = cn.prepareStatement("UPDATE `players` SET `id`='?',`username`='?',`role`='?',`email`='?',`hash`='?',`salt`='?' WHERE ?");
+
+            ps.setInt(1, id);
+            ps.setString(2, username);
+            ps.setString(3, role);
+            ps.setString(4, email);
+            ps.setInt(5, id);
+
+            if (ps.executeUpdate() == 1) {
+                return "1";
+            } else {
+                return "Errore#4 Data insertion error. Please try again later.";
+            }
+
+        } catch (SQLException ex) {
+            return ex.toString();
+
+        }
+    }
+     }
+

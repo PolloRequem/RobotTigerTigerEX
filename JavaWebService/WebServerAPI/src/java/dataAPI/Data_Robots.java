@@ -33,7 +33,7 @@ public class Data_Robots {
     
     
     @GET
-    public String getRobots(@QueryParam("max_robots") @DefaultValue("5") int maxRobots) {
+    public String getRobots() {
          ObjectMapper objectMapper = new ObjectMapper();
          String jsonData;
         
@@ -42,12 +42,9 @@ public class Data_Robots {
         
         try {
   
-            for(int i=0 ; i < maxRobots && i < dummyList.size() ;i++ ){
-
-                robots.add(dummyList.get(i));
-            }
+           
             
-            jsonData = objectMapper.writeValueAsString(robots);
+            jsonData = objectMapper.writeValueAsString(dummyList);
         } catch (JsonProcessingException ex) {
              //  return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
              return ex.toString();

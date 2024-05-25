@@ -43,6 +43,8 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
         newPlayer = PlayerPrefsManger.Current_playerBean_Customize;
 
         button_ResetPassword.interactable = false;
+
+        print(JsonConvert.SerializeObject(newPlayer));
     }
 
 
@@ -53,7 +55,7 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
         newPlayer.username = userInputField.text;
 
 
-        print(userInputField.text);
+       
     }
 
     public void cambiaRuolo()
@@ -91,9 +93,8 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
     private IEnumerator PUT_ChangePlayer()
     {
 
-        using (UnityWebRequest webRequest = UnityWebRequest.Put("http://localhost:8161/WebServerAPI/data/players", JsonConvert.SerializeObject(newPlayer)))
+        using (UnityWebRequest webRequest = UnityWebRequest.Put("http://localhost:8161/WebServerAPI/data/players", JsonConvert.SerializeObject(newPlayer).ToString()))
         {
-            print(JsonConvert.SerializeObject(newPlayer));
             yield return webRequest.SendWebRequest();
 
             switch (webRequest.result)

@@ -4,16 +4,18 @@
  */
 package Bean;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  *
  * @author Dante
  */
 public class Player {
     
-    private int id;
-    private String username;
-    private String role;
-    private String email;
+  @JsonProperty("id")  private int id;
+  @JsonProperty("username")   private String username;
+  @JsonProperty("role")  private String role;
+  @JsonProperty("email")  private String email;
 
     public int getId() {
         return id;

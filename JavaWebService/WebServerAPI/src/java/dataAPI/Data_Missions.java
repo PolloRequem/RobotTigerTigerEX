@@ -64,7 +64,7 @@ public class Data_Missions {
         } catch (JsonProcessingException ex) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        return Response.ok("puppa", MediaType.APPLICATION_JSON).build();
+        return Response.ok(jsonData, MediaType.APPLICATION_JSON).build();
 
     }
 

@@ -15,7 +15,9 @@ public class ElencoPlayer : MonoBehaviour
 
     [SerializeField] private Button  delete_Button;
     [SerializeField] private Button customize_Button;
-    public static string playerSelected;
+
+    private List<PlayerBean> listaPlayerXUI;
+    public static PlayerBean playerSelected;
 
     public void Start()
     {
@@ -23,16 +25,25 @@ public class ElencoPlayer : MonoBehaviour
         Call_GET_Player();
         customize_Button.interactable = false;
         delete_Button.interactable = false;
+
+       
     }
 
     public void Update()
     {
 
-        if (playerSelected != null)
+        if (playerSelected == null || playerSelected.role.Equals("admin"))
+        {
+            customize_Button.interactable = false;
+            delete_Button.interactable = false;
+        }else
         {
             customize_Button.interactable = true;
             delete_Button.interactable = true;
         }
+
+
+        
     }
 
     private void Call_DELETE_Player()
@@ -63,11 +74,8 @@ public class ElencoPlayer : MonoBehaviour
                 case UnityWebRequest.Result.Success:
 
                     List<PlayerBean> playerJson = JsonConvert.DeserializeObject<List<PlayerBean>>(webRequest.downloadHandler.text);
-                   foreach(PlayerBean p in playerJson)
-                    {
-                        p.toString();
-                    }
-                    uiDiplayer.UpdateVisual(playerJson);
+                    listaPlayerXUI = playerJson;
+                    uiDiplayer.UpdateVisual(togliThisUser(playerJson));
 
                     break;
             }
@@ -77,7 +85,7 @@ public class ElencoPlayer : MonoBehaviour
     private IEnumerator DELETE_Player()
     {
 
-        using (UnityWebRequest webRequest = UnityWebRequest.Delete("http://localhost:8161/WebServerAPI/data/players/"+playerSelected))
+        using (UnityWebRequest webRequest = UnityWebRequest.Delete("http://localhost:8161/WebServerAPI/data/players/"+playerSelected.id))
         {
             yield return webRequest.SendWebRequest();
 
@@ -91,9 +99,7 @@ public class ElencoPlayer : MonoBehaviour
                     break;
                 case UnityWebRequest.Result.Success:
 
-                    //List<PlayerBean> playerJson = JsonConvert.DeserializeObject<List<PlayerBean>>(webRequest.downloadHandler.text);
-                    //uiDiplayer.UpdateVisual(playerJson);
-
+                    Call_GET_Player();
                     break;
             }
         }
@@ -114,6 +120,20 @@ public class ElencoPlayer : MonoBehaviour
     {
         Call_DELETE_Player();
         delete_ConfirmTab.SetActive(false);
+    }
+
+
+    private List<PlayerBean> togliThisUser(List<PlayerBean> players)
+    {
+        List<PlayerBean> dummyList = players;
+        foreach (PlayerBean player in players)
+        {
+            if (player.username.Equals(PlayerPrefs.GetString("Login_Username")))
+            {
+               dummyList.Remove(player);
+            }
+        }
+        return dummyList;
     }
     //private IEnumerator PUT_ResetPassword_Player()
     //{

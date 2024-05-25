@@ -50,4 +50,27 @@ public class PlayerDAO {
         }
 
     }
+     
+     public static String deletePlayer(String id){
+         Connection cn = ConnectionDataBase.getConnection();
+
+        if (cn == null) {
+            return null;
+        }
+          PreparedStatement ps;
+        try {
+
+            ps = cn.prepareStatement("DELETE FROM `players` WHERE id=?");
+            ps.setString(1, id);
+    
+            ResultSet rs = ps.executeQuery();
+        
+
+            return "ok"; 
+
+        } catch (SQLException ex) {
+            return null;
+
+        }
+     }
 }

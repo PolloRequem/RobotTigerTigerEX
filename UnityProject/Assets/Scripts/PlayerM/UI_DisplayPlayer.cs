@@ -24,7 +24,7 @@ public class UI_DisplayPlayer : MonoBehaviour
         {
             Transform frameTranform = Instantiate(frameTemplate, transform);
             frameTranform.gameObject.SetActive(true);
-            frameTranform.GetComponent<Record_Player>().SetUPRecords(p.id, p.username, p.role, p.email);
+            frameTranform.GetComponent<Record_Player>().SetUPRecords(p);
 
         }
 

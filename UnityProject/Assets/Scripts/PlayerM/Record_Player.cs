@@ -12,20 +12,22 @@ public class Record_Player : MonoBehaviour, ISelectHandler
     [SerializeField] private TextMeshProUGUI text_role;
     [SerializeField] private TextMeshProUGUI text_email;
 
+    private PlayerBean thisPlayer;
 
-
-    public void SetUPRecords(int id, string Username, string role, string email)
+    public void SetUPRecords(PlayerBean player)
     {
-        text_id.text = id.ToString();
-        text_userName.text = Username;
-        text_role.text = role;
-        text_email.text = email;
+        thisPlayer = player;
+        text_id.text = player.id.ToString();
+        text_userName.text = player.username;
+        text_role.text = player.role;
+        text_email.text = player.email;
         
     }
 
     public void OnSelect(BaseEventData eventData)
     {
-        ElencoPlayer.playerSelected = text_id.text;
-        print(ElencoPlayer.playerSelected);
+        ElencoPlayer.playerSelected = thisPlayer;
+       
+       
     }
 }

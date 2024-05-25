@@ -35,7 +35,7 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
     private PlayerBean newPlayer;
 
     private bool isChangeRuoloPressed;
-    private bool is 
+   
     private void Start()
     {
      
@@ -112,7 +112,7 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
                     break;
                 case UnityWebRequest.Result.Success:
 
-                    
+                    analizzaRisposta(webRequest.downloadHandler.text);
 
 
                     break;
@@ -125,6 +125,14 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
         if(riposta == "1")
         {
             SceneManager.LoadScene("Hub_Players");
+        }
+        else if(riposta== "2")
+        {
+            errorMessage.text = "User Name already exist";
+        }
+        else
+        {
+            errorMessage.text = riposta;
         }
     }
 

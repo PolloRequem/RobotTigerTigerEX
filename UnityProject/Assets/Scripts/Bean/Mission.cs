@@ -18,3 +18,5 @@ public class Mission
         return "Mission{" + "id=" + id + ", nome=" + nome + ", robot=" + robot + ", player=" + player + ", punteggio=" + punteggio + ", dataInizio=" + dataInizio + ", dataFine=" + dataFine + ", completata=" + completata + '}';
     }
 }
+
+

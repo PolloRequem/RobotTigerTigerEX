@@ -79,4 +79,9 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("Hub_CompleteMission");
     }
 
+    public void GOTO_Test_testScene1()
+    {
+        SceneManager.LoadScene("Test_testScene1");
+    }
+
 }

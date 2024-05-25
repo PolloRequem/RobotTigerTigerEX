@@ -110,18 +110,25 @@ public class ElencoPlayer : MonoBehaviour
     {
         delete_ConfirmTab.SetActive(true);
     }
-
     public void Button_ConfirmTab_Cancel()
     {
         delete_ConfirmTab.SetActive(false);
     }
-
     public void Button_ConfirmTab_Delete()
     {
         Call_DELETE_Player();
         delete_ConfirmTab.SetActive(false);
     }
 
+
+    public void Button_CustomizePlayer()
+    {
+        PlayerPrefs.SetString("_Current_CustomizePlayer_username",playerSelected.username);
+        PlayerPrefs.Save();
+        PlayerPrefsManger.Current_playerBean_Customize = playerSelected;
+
+        SceneManager.LoadScene("Player_Customize");
+    }
 
     private List<PlayerBean> togliThisUser(List<PlayerBean> players)
     {

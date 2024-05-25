@@ -57,6 +57,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Simulation/StartFinding/ExistingMission.unity
     guid: 6d7a41fb32015af4da964ed96d416044
   - enabled: 1
+    path: Assets/Scenes/Players/Player_Customize.unity
+    guid: 2938d3581108917419202de586b00a9c
+  - enabled: 1
     path: Assets/Scenes/Simulation/StartFinding/NewMission.unity
     guid: 9eb561cb6f0c78a44813ad30a932c00b
   - enabled: 1

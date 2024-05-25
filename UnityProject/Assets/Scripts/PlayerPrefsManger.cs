@@ -13,4 +13,13 @@ public   class PlayerPrefsManger : MonoBehaviour
     {
         return PlayerPrefs.GetString("Login_Role");
     }
+
+
+    public static string PP_Current_Player_CustomizePlayer_UserName()
+    {
+        return PlayerPrefs.GetString("_Current_CustomizePlayer_username");
+    }
+
+
+    public static PlayerBean Current_playerBean_Customize;
 }

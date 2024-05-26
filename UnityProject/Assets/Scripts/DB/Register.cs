@@ -56,7 +56,7 @@ public class Register : MonoBehaviour
         form.AddField("username", usernameField.text);
         form.AddField("email", emailField.text);
         form.AddField("password", passwordField.text);
-        using (webRequest = UnityWebRequest.Post("http://localhost:8161/WebServerAPI/authenticator/registration", form))
+        using (webRequest = UnityWebRequest.Post(PlayerPrefsManger.PP_ServerURL() + "/authenticator/registration", form))
         {
             yield return webRequest.SendWebRequest();
 

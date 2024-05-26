@@ -31,7 +31,7 @@ public class ElencoRitrovamenti : MonoBehaviour
     private IEnumerator GET_Ritrovamenti()
     {
 
-        using (UnityWebRequest webRequest = UnityWebRequest.Get("http://localhost:8161/WebServerAPI/data/ritrovamenti"))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(PlayerPrefsManger.PP_ServerURL() + "/data/ritrovamenti"))
         {
             yield return webRequest.SendWebRequest();
 

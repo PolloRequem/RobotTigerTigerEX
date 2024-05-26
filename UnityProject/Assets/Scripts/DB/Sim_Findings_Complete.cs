@@ -23,7 +23,7 @@ public class Sim_Findings_Complete : MonoBehaviour
         form.AddField("materiale", UI_Game_StartM.coloreSelezionatoID);
         form.AddField("data", System.DateTime.Today.ToShortDateString());
         form.AddField("parziali", getIDRandoNumber());
-        using (UnityWebRequest webRequest = UnityWebRequest.Post("http://localhost:8161/WebServerAPI/data/ritrovamenti", form))
+        using (UnityWebRequest webRequest = UnityWebRequest.Post(PlayerPrefsManger.PP_ServerURL() + "/data/ritrovamenti", form))
         {
             yield return webRequest.SendWebRequest();
 

@@ -6,7 +6,10 @@ using UnityEngine.EventSystems;
 
 public class ButtonManager : MonoBehaviour
 {
-   
+   public void GOT_Options()
+    {
+        SceneManager.LoadScene("Options");
+    }
     public void QUIT()
     {
         Application.Quit();

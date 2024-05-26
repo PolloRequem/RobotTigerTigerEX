@@ -59,7 +59,7 @@ public class ElencoPlayer : MonoBehaviour
     private IEnumerator GET_Player()
     {
 
-        using (UnityWebRequest webRequest = UnityWebRequest.Get("http://localhost:8161/WebServerAPI/data/players"))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(PlayerPrefsManger.PP_ServerURL() + "/data/players"))
         {
             yield return webRequest.SendWebRequest();
 
@@ -85,7 +85,7 @@ public class ElencoPlayer : MonoBehaviour
     private IEnumerator DELETE_Player()
     {
 
-        using (UnityWebRequest webRequest = UnityWebRequest.Delete("http://localhost:8161/WebServerAPI/data/players/"+playerSelected.id))
+        using (UnityWebRequest webRequest = UnityWebRequest.Delete(PlayerPrefsManger.PP_ServerURL() + "/data/players/" + playerSelected.id))
         {
             yield return webRequest.SendWebRequest();
 
@@ -145,7 +145,7 @@ public class ElencoPlayer : MonoBehaviour
     //private IEnumerator PUT_ResetPassword_Player()
     //{
 
-    //    using (UnityWebRequest webRequest = UnityWebRequest.Put("http://localhost:8161/WebServerAPI/data/players",))
+    //    using (UnityWebRequest webRequest = UnityWebRequest.Put("PlayerPrefsManger.PP_ServerURL()+"/data/players",))
     //    {
     //        yield return webRequest.SendWebRequest();
 

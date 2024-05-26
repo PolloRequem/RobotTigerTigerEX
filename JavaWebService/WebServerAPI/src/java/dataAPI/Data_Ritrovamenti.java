@@ -4,18 +4,17 @@
  */
 package dataAPI;
 
-import Bean.Mission;
 import Bean.Ritrovamenti;
-import DAO.RegistraDAO;
+
 import DAO.RitrovamentiDAO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.DefaultValue;
+
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
+
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Form;
 import jakarta.ws.rs.core.MediaType;

@@ -29,7 +29,7 @@ public class ElencoMissionAll : MonoBehaviour
     private IEnumerator GET_Missions()
     {
 
-        using (UnityWebRequest webRequest = UnityWebRequest.Get("http://localhost:8161/WebServerAPI/data/missions"))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(PlayerPrefsManger.PP_ServerURL() + "/data/missions"))
         {
             yield return webRequest.SendWebRequest();
 

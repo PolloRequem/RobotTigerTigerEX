@@ -51,7 +51,7 @@ public class Data_Player {
     }
     
     @PUT
-    @Consumes(MediaType.APPLICATION_JSON_PATCH_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response PUT_Dipendente(Player player) {
         try {
            

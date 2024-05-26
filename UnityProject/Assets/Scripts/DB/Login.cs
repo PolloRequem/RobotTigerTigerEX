@@ -27,7 +27,7 @@ public class Login : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("username", usernameField.text);
         form.AddField("password", passwordField.text);
-        using (webRequest = UnityWebRequest.Post("http://localhost:8161/WebServerAPI/authenticator/login", form))
+        using (webRequest = UnityWebRequest.Post(PlayerPrefsManger.PP_ServerURL() + "/authenticator/login", form))
         {
             yield return webRequest.SendWebRequest();
 

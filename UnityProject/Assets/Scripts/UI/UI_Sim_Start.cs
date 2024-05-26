@@ -17,16 +17,6 @@ public class UI_Sim_Start : MonoBehaviour
 
 
 
-    //[Header("Riquadri")]
-    //public Image[] riquadri;
-    //public Image[] robotBodyes;
-    //public TextMeshProUGUI nomiRobot;
-    //[SerializeField] private Transform frameTemplate;
-
-    //private bool isUnRiquadroSelezionato;
-    //private int lastSelectedIndex;
-
-    //List<string> elencoSeriali = new List<string>();
     private bool isMissionRegistrationOK;
     Robot[] robots;
 
@@ -65,10 +55,6 @@ public class UI_Sim_Start : MonoBehaviour
     {
         StartCoroutine(GET_Missions());
     }
-    //public void Call_GET_MisisonSerials()
-    //{
-    //    StartCoroutine(GET_MissionsSerials());
-    //}
     public void Call_GET_DATAobots()
     {
         StartCoroutine(GET_DataRobots());
@@ -80,33 +66,9 @@ public class UI_Sim_Start : MonoBehaviour
 
 
 
-    //private IEnumerator GET_MissionsSerials()
-    //{
-    //    using (UnityWebRequest webRequest = UnityWebRequest.Get("http://localhost:8161/WebServerAPI/data/missions/serials"))
-    //    {
-    //        yield return webRequest.SendWebRequest();
-
-    //        switch (webRequest.result)
-    //        {
-    //            case UnityWebRequest.Result.ConnectionError:
-    //            case UnityWebRequest.Result.DataProcessingError:
-    //            case UnityWebRequest.Result.ProtocolError:
-    //                //Debug.LogError
-    //                print((String.Format("Something went wrong  {0}", webRequest.error)));
-    //                break;
-    //            case UnityWebRequest.Result.Success:
-
-    //                string json = webRequest.downloadHandler.text;
-
-    //                //jsonIntoSerialiArray(json);
-
-    //                break;
-    //        }
-    //    }
-    //}
     private IEnumerator GET_Missions()
     {
-        using (UnityWebRequest webRequest = UnityWebRequest.Get("http://localhost:8161/WebServerAPI/data/missions"))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(PlayerPrefsManger.PP_ServerURL()+"/data/missions"))
         {
             yield return webRequest.SendWebRequest();
 
@@ -134,7 +96,7 @@ public class UI_Sim_Start : MonoBehaviour
     }
     private IEnumerator GET_DataRobots()
     {
-        using (UnityWebRequest webRequest = UnityWebRequest.Get("http://localhost:8161/WebServerAPI/data/robots"))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(PlayerPrefsManger.PP_ServerURL() + "/data/robots"))
         {
             yield return webRequest.SendWebRequest();
 
@@ -161,7 +123,7 @@ public class UI_Sim_Start : MonoBehaviour
         form.AddField("nome", M_Name);
         form.AddField("robot", robotName);
         form.AddField("player", currentPlayer);
-        using (UnityWebRequest webRequest = UnityWebRequest.Post("http://localhost:8161/WebServerAPI/data/missions", form))
+        using (UnityWebRequest webRequest = UnityWebRequest.Post(PlayerPrefsManger.PP_ServerURL()+"/data/missions", form))
         {
             yield return webRequest.SendWebRequest();
 

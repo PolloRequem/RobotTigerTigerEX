@@ -95,9 +95,8 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
     }
     private IEnumerator PUT_ChangePlayer()
     {
-        print(JsonConvert.SerializeObject(newPlayer).ToString());
-        print(JsonConvert.SerializeObject(newPlayer));
-        using (UnityWebRequest webRequest = UnityWebRequest.Put("http://localhost:8161/WebServerAPI/data/players", JsonConvert.SerializeObject(newPlayer)))
+     
+        using (UnityWebRequest webRequest = UnityWebRequest.Put(PlayerPrefsManger.PP_ServerURL() + "/data/players", JsonConvert.SerializeObject(newPlayer)))
         {
             webRequest.SetRequestHeader("Content-Type", "application/json");
             yield return webRequest.SendWebRequest();

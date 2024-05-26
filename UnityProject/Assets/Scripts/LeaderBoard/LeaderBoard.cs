@@ -26,7 +26,7 @@ public class LeaderBoard : MonoBehaviour
     private IEnumerator GET_Mission()
     {
 
-        using (UnityWebRequest webRequest = UnityWebRequest.Get("http://localhost:8161/WebServerAPI/data/missions"))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(PlayerPrefsManger.PP_ServerURL() + "/data/missions"))
         {
             yield return webRequest.SendWebRequest();
 

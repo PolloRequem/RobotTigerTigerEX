@@ -20,6 +20,12 @@ public   class PlayerPrefsManger : MonoBehaviour
         return PlayerPrefs.GetString("_Current_CustomizePlayer_username");
     }
 
+    public static string PP_ServerURL()
+    {
+        return PlayerPrefs.GetString("ServerURL");
+    }
 
     public static PlayerBean Current_playerBean_Customize;
+
+    public static string defaultServerURL = "http://localhost:8080/WebServerAPI";
 }

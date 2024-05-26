@@ -1052,7 +1052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7012787295937447439, guid: 86dfaffae01aa904684c796c9863732f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2859,11 +2859,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_Name
       value: EnemyPorcoSpino (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8201588137000646491, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3359,11 +3363,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_Name
       value: EnemyPorcoSpino (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8201588137000646491, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3415,17 +3423,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1860306535386725268, guid: 53179a2cfd54c4a49965edbb549ee59d, type: 3}
   m_PrefabInstance: {fileID: 859899538}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &369646238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 369646239}
+  m_Layer: 0
+  m_Name: Nemici
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &369646239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369646238}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 676976928}
+  - {fileID: 885651290}
+  - {fileID: 1563343335}
+  - {fileID: 1944345553}
+  - {fileID: 3377382}
+  - {fileID: 1536872910}
+  - {fileID: 1423532792}
+  - {fileID: 619648744}
+  - {fileID: 263897482}
+  - {fileID: 153079333}
+  - {fileID: 134944288}
+  - {fileID: 2012084968}
+  - {fileID: 1303788921}
+  - {fileID: 1985873603}
+  - {fileID: 1695837041}
+  - {fileID: 1469574250}
+  - {fileID: 1898789009}
+  - {fileID: 412029973}
+  - {fileID: 15566945}
+  - {fileID: 847782849}
+  - {fileID: 2013687673}
+  - {fileID: 538989315}
+  - {fileID: 585315647}
+  - {fileID: 1328960487}
+  - {fileID: 246688564}
+  - {fileID: 317091323}
+  - {fileID: 2002178739}
+  - {fileID: 1556919742}
+  m_Father: {fileID: 1970621618}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &370178734
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_Name
       value: EnemyPorcoSpino (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8201588137000646491, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4160,7 +4231,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 8081674628870059362, guid: fcb765131a32d244296e1048d93b11bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4205,6 +4276,10 @@ PrefabInstance:
     - target: {fileID: 8272211992237846453, guid: fcb765131a32d244296e1048d93b11bd, type: 3}
       propertyPath: m_Name
       value: Tartarugo (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272211992237846453, guid: fcb765131a32d244296e1048d93b11bd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4567,11 +4642,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_Name
       value: EnemyPorcoSpino (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8201588137000646491, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5003,7 +5082,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 8081674628870059362, guid: fcb765131a32d244296e1048d93b11bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5049,6 +5128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tartarugo (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8272211992237846453, guid: fcb765131a32d244296e1048d93b11bd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5060,11 +5143,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_Name
       value: EnemyPorcoSpino
+      objectReference: {fileID: 0}
+    - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8201588137000646491, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5926,7 +6013,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 5215956221152487375, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5971,6 +6058,10 @@ PrefabInstance:
     - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_Name
       value: Medusa (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6438,7 +6529,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 8081674628870059362, guid: fcb765131a32d244296e1048d93b11bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6483,6 +6574,10 @@ PrefabInstance:
     - target: {fileID: 8272211992237846453, guid: fcb765131a32d244296e1048d93b11bd, type: 3}
       propertyPath: m_Name
       value: Tartarugo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272211992237846453, guid: fcb765131a32d244296e1048d93b11bd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8231,7 +8326,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 5215956221152487375, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8276,6 +8371,10 @@ PrefabInstance:
     - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_Name
       value: Medusa (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9224,11 +9323,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_Name
       value: SqualoVerde (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6949238763241865254, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9597,7 +9700,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 5215956221152487375, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9642,6 +9745,10 @@ PrefabInstance:
     - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_Name
       value: Medusa (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9951,11 +10058,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_Name
       value: SqualoVerde (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6949238763241865254, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11563,7 +11674,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 1593160825681882016, guid: e5eaac9d68152f049a3c455686b9c504, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11608,6 +11719,10 @@ PrefabInstance:
     - target: {fileID: 4219376072257592271, guid: e5eaac9d68152f049a3c455686b9c504, type: 3}
       propertyPath: m_Name
       value: MaterialiPiccoli (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219376072257592271, guid: e5eaac9d68152f049a3c455686b9c504, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12130,7 +12245,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_Name
@@ -12650,7 +12765,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a28960bf12ee0ef439f0a3de86162ef9, type: 3}
-  m_Color: {r: 0.41960788, g: 0.36862746, b: 0.70980394, a: 1}
+  m_Color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13736,11 +13851,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_Name
       value: SqualoVerde (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6949238763241865254, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14580,11 +14699,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_Name
       value: SqualoVerde (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6949238763241865254, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15065,7 +15188,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 5215956221152487375, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15110,6 +15233,10 @@ PrefabInstance:
     - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_Name
       value: Medusa
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15988,7 +16115,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 5215956221152487375, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16033,6 +16160,10 @@ PrefabInstance:
     - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_Name
       value: Medusa (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16881,11 +17012,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_Name
       value: SqualoVerde (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6949238763241865254, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17684,7 +17819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1541751736
 Transform:
   m_ObjectHideFlags: 0
@@ -18498,11 +18633,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_Name
       value: SqualoVerde (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6949238763241865254, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18754,11 +18893,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_Name
       value: SqualoVerde (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6949238763241865254, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19514,7 +19657,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 1593160825681882016, guid: e5eaac9d68152f049a3c455686b9c504, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19559,6 +19702,10 @@ PrefabInstance:
     - target: {fileID: 4219376072257592271, guid: e5eaac9d68152f049a3c455686b9c504, type: 3}
       propertyPath: m_Name
       value: MaterialiPiccoli (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219376072257592271, guid: e5eaac9d68152f049a3c455686b9c504, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19717,7 +19864,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 5215956221152487375, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19762,6 +19909,10 @@ PrefabInstance:
     - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
       propertyPath: m_Name
       value: Medusa (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189545899086500281, guid: 5fb50472fd689f04d9a71bf2754f2c90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21034,11 +21185,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_Name
       value: EnemyPorcoSpino (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 914443117898615032, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8201588137000646491, guid: acf2f5d702cc89d469cd8c89b6be4c29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21091,11 +21246,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_Name
       value: SqualoVerde (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 156667301741267040, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6949238763241865254, guid: 0ec870a2bc4123240867ae88591ca874, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22514,7 +22673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1970621618
 Transform:
   m_ObjectHideFlags: 0
@@ -22549,8 +22708,7 @@ Transform:
   - {fileID: 868836114}
   - {fileID: 1430180240}
   - {fileID: 1747254201}
-  - {fileID: 1556919742}
-  - {fileID: 676976928}
+  - {fileID: 369646239}
   - {fileID: 786589889}
   - {fileID: 869331363}
   - {fileID: 1969238073}
@@ -22678,20 +22836,14 @@ Transform:
   - {fileID: 191163450}
   - {fileID: 1860538169}
   - {fileID: 395805053}
-  - {fileID: 885651290}
   - {fileID: 1349956169}
   - {fileID: 2025843988}
   - {fileID: 1151545437}
   - {fileID: 976997405}
-  - {fileID: 1563343335}
-  - {fileID: 1944345553}
-  - {fileID: 3377382}
   - {fileID: 299277789}
   - {fileID: 474942239}
   - {fileID: 52303698}
   - {fileID: 1256940534}
-  - {fileID: 1536872910}
-  - {fileID: 1423532792}
   - {fileID: 1127301540}
   - {fileID: 1932282262}
   - {fileID: 1021736276}
@@ -22700,22 +22852,14 @@ Transform:
   - {fileID: 1517469412}
   - {fileID: 52296184}
   - {fileID: 1946443671}
-  - {fileID: 619648744}
-  - {fileID: 263897482}
-  - {fileID: 153079333}
-  - {fileID: 134944288}
   - {fileID: 1367294017}
   - {fileID: 1905194429}
   - {fileID: 938921076}
   - {fileID: 1298307571}
-  - {fileID: 2012084968}
-  - {fileID: 1303788921}
   - {fileID: 1859628173}
   - {fileID: 1748619084}
   - {fileID: 783324916}
   - {fileID: 733023852}
-  - {fileID: 1985873603}
-  - {fileID: 1695837041}
   - {fileID: 1485545979}
   - {fileID: 2111048923}
   - {fileID: 1465417787}
@@ -22725,14 +22869,10 @@ Transform:
   - {fileID: 2105263915}
   - {fileID: 1253778748}
   - {fileID: 1758678990}
-  - {fileID: 1469574250}
   - {fileID: 437632088}
   - {fileID: 40109513}
   - {fileID: 1655417377}
   - {fileID: 250111233}
-  - {fileID: 1898789009}
-  - {fileID: 412029973}
-  - {fileID: 15566945}
   - {fileID: 666570801}
   - {fileID: 673725565}
   - {fileID: 1712311979}
@@ -22741,20 +22881,12 @@ Transform:
   - {fileID: 1624627084}
   - {fileID: 727935066}
   - {fileID: 167346750}
-  - {fileID: 847782849}
-  - {fileID: 2013687673}
-  - {fileID: 538989315}
-  - {fileID: 585315647}
   - {fileID: 490401763}
   - {fileID: 51084987}
   - {fileID: 2128577480}
   - {fileID: 1360912256}
   - {fileID: 1847465515}
-  - {fileID: 1328960487}
-  - {fileID: 246688564}
   - {fileID: 1685813476}
-  - {fileID: 317091323}
-  - {fileID: 2002178739}
   - {fileID: 28530063}
   - {fileID: 1787593586}
   - {fileID: 832734599}
@@ -23036,7 +23168,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 1593160825681882016, guid: e5eaac9d68152f049a3c455686b9c504, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23081,6 +23213,10 @@ PrefabInstance:
     - target: {fileID: 4219376072257592271, guid: e5eaac9d68152f049a3c455686b9c504, type: 3}
       propertyPath: m_Name
       value: MaterialiPiccoli
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219376072257592271, guid: e5eaac9d68152f049a3c455686b9c504, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24474,7 +24610,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1970621618}
+    m_TransformParent: {fileID: 369646239}
     m_Modifications:
     - target: {fileID: 8081674628870059362, guid: fcb765131a32d244296e1048d93b11bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24519,6 +24655,10 @@ PrefabInstance:
     - target: {fileID: 8272211992237846453, guid: fcb765131a32d244296e1048d93b11bd, type: 3}
       propertyPath: m_Name
       value: Tartarugo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272211992237846453, guid: fcb765131a32d244296e1048d93b11bd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

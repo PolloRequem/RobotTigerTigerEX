@@ -6,10 +6,13 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Globalization;
 
 public class Sim_Findings_Complete : MonoBehaviour
 {
 
+
+    
     [ContextMenu("Get Missioni")]
     public void Call_POST_RegistraFinding()
     {
@@ -21,7 +24,7 @@ public class Sim_Findings_Complete : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("missione",  PlayerPrefs.GetString("IDMission_Started"));
         form.AddField("materiale", UI_Game_StartM.coloreSelezionatoID);
-        form.AddField("data", System.DateTime.Today.ToShortDateString());
+        form.AddField("data", UnityDateTOSQLDate(System.DateTime.Today.ToShortDateString()));
         form.AddField("parziali", getIDRandoNumber());
         using (UnityWebRequest webRequest = UnityWebRequest.Post(PlayerPrefsManger.PP_ServerURL() + "/data/ritrovamenti", form))
         {
@@ -60,5 +63,22 @@ public class Sim_Findings_Complete : MonoBehaviour
     private void GOTO_Sim_Finding_Complete()
     {
         SceneManager.LoadScene("Mission_ritrovamenti");
+    }
+
+    private string UnityDateTOSQLDate(string inputDate)
+    {
+        string[] dateParts = inputDate.Split('/');
+
+    
+            string day = dateParts[0];
+   
+            string month = dateParts[1];
+     
+            string year = dateParts[2];
+       
+
+     
+        return $"{year}-{month}-{day}";
+        
     }
 }

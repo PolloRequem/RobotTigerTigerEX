@@ -59,7 +59,9 @@ public class Records_Mission : MonoBehaviour
 
     public void GOTO_Game_CompleteMission()
     {
-        PlayerPrefs.SetString("IDMission_Started", idIndex);
+        
+     
+        PlayerPrefs.SetString("Mission_Completed_Id", idIndex);
         PlayerPrefs.SetString("Mission_Comleted_Name", text_nome.text);
         PlayerPrefs.SetString("Mission_Comleted_Player_NotCurrent", text_player.text);
         PlayerPrefs.Save();

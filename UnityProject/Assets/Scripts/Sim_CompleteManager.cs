@@ -36,6 +36,7 @@ public class Sim_CompleteManager : MonoBehaviour
         StartCoroutine(IncrementNumbers(missioniCompletate , .5f, 2.2f, PlayerPrefsManger.Current_playerLogged.missionsCompleted + 1));
 
         StartCoroutine(PUT_ModifyPlayer());
+        StartCoroutine(PUT_ModifyMission());
     }
 
     private IEnumerator IncrementNumbers(TextMeshProUGUI textToChange, float duration, float wiatforSeconds,  int targetPoints)
@@ -71,7 +72,7 @@ public class Sim_CompleteManager : MonoBehaviour
         using (UnityWebRequest webRequest = UnityWebRequest.Put(PlayerPrefsManger.PP_ServerURL() + "/data/players/addPoints", JsonConvert.SerializeObject(PlayerPrefsManger.Current_playerLogged)))
         {
 
-            print(JsonConvert.SerializeObject(PlayerPrefsManger.Current_playerLogged));
+            
             webRequest.SetRequestHeader("Content-Type", "application/json");
             yield return webRequest.SendWebRequest();
 
@@ -95,14 +96,17 @@ public class Sim_CompleteManager : MonoBehaviour
 
     private IEnumerator PUT_ModifyMission()
     {
-
-
+        PlayerPrefsManger.Current_Mission_Complete = new Mission();
+        PlayerPrefsManger.Current_Mission_Complete.id = PlayerPrefsManger.PP_Mission_Completed_Id();
+        PlayerPrefsManger.Current_Mission_Complete.punteggio = PlayerPrefsManger.Current_Score;
         PlayerPrefsManger.Current_Mission_Complete.dataFine = UnityDateTOSQLDate(System.DateTime.Today.ToShortDateString());
+
+        //non ho voglia di sistemarlo
+
 
         using (UnityWebRequest webRequest = UnityWebRequest.Put(PlayerPrefsManger.PP_ServerURL() + "/data/missions", JsonConvert.SerializeObject(PlayerPrefsManger.Current_Mission_Complete)))
         {
 
-            print(JsonConvert.SerializeObject(PlayerPrefsManger.Current_playerLogged));
             webRequest.SetRequestHeader("Content-Type", "application/json");
             yield return webRequest.SendWebRequest();
 
@@ -111,6 +115,7 @@ public class Sim_CompleteManager : MonoBehaviour
                 case UnityWebRequest.Result.ConnectionError:
                 case UnityWebRequest.Result.DataProcessingError:
                 case UnityWebRequest.Result.ProtocolError:
+                    error_message.text = webRequest.error;
                     Debug.LogError(String.Format("Something went wrong  {0}", webRequest.error));
                     break;
                 case UnityWebRequest.Result.Success:

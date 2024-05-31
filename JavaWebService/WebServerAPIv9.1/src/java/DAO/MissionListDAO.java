@@ -161,4 +161,33 @@ public class MissionListDAO {
         }
 
     }
+    
+         public static String completeMissions(String id , int punteggio, String dataFine){
+        
+    Connection cn = ConnectionDataBase.getConnection();
+
+        if (cn == null) {
+            return "Connection Lost";
+        }
+        PreparedStatement ps;
+        try {
+
+            ps = cn.prepareStatement("UPDATE `missions` SET  `punteggio`=?  ,`dataFine`=?  WHERE id=?");
+
+              ps.setInt(1, punteggio);
+            ps.setString(2, dataFine);
+           
+            ps.setString(3,  id);
+
+            if (ps.executeUpdate() == 1) {
+                return "1";
+            } else {
+                return "Errore#4 Data insertion error. Please try again later.";
+            }
+
+        } catch (Exception ex ) {
+            return ex.toString();
+
+        }
+    }
 }

@@ -40,6 +40,11 @@ public   class PlayerPrefsManger : MonoBehaviour
         return PlayerPrefs.GetString("Mission_Comleted_Name");
     }
 
+    public static string PP_Mission_Completed_Id()
+    {
+        return PlayerPrefs.GetString("Mission_Completed_Id");
+    }
+
     public static string PP_Mission_Copleted_Player()
     {
         return PP_LoginUsername();

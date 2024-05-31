@@ -4,6 +4,7 @@
  */
 package Bean;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 
 /**
@@ -12,18 +13,31 @@ import java.util.Date;
  */
 public class Mission {
 
+    @JsonProperty("id")
     private String id;
+    @JsonProperty("nome")
     private String nome;
+    @JsonProperty("robot")
     private String robot;
+    @JsonProperty("player")
     private String player;
+    @JsonProperty("punteggio")
     private int punteggio;
+    @JsonProperty("dataInizio")
     private String dataInizio;
+    @JsonProperty("dataFine")
     private String dataFine;
-    private boolean completata;  
-   
-    
+    @JsonProperty("completata")
+    private boolean completata;
 
-    public Mission(String id, int punteggio, boolean completata, String nome, String robot, String dataInizio, String dataFine ,String player) {
+    public Mission() {
+    }
+
+    
+    
+    
+    
+    public Mission(String id, int punteggio, boolean completata, String nome, String robot, String dataInizio, String dataFine, String player) {
         this.id = id;
         this.punteggio = punteggio;
         this.completata = completata;
@@ -32,17 +46,16 @@ public class Mission {
         this.dataInizio = dataInizio;
         this.dataFine = dataFine;
         this.player = player;
-        
+
     }
-    
-    public Mission(String id, int punteggio, String nome, String robot,String player, String dataInizio  ) {
+
+    public Mission(String id, int punteggio, String nome, String robot, String player, String dataInizio) {
         this.id = id;
         this.nome = nome;
         this.robot = robot;
-         this.player = player;
+        this.player = player;
         this.dataInizio = dataInizio;
-       
-      
+
     }
 
     public String getId() {
@@ -114,15 +127,4 @@ public class Mission {
         return "Mission{" + "id=" + id + ", nome=" + nome + ", robot=" + robot + ", player=" + player + ", punteggio=" + punteggio + ", dataInizio=" + dataInizio + ", dataFine=" + dataFine + ", completata=" + completata + '}';
     }
 
-    
-    
-    
-  
-
-  
-   
-    
-
-    
-    
 }

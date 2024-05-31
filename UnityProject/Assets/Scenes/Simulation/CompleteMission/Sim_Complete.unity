@@ -2330,7 +2330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeMissioneTitolo: {fileID: 916796426}
-  nomePlayer: {fileID: 1555996829}
+  nomePlayer1: {fileID: 1555996829}
+  nomePlayer2: {fileID: 74158439}
   puntiOttenuti: {fileID: 703965924}
   puntiTotali: {fileID: 1712370119}
   missioniCompletate: {fileID: 118231801}

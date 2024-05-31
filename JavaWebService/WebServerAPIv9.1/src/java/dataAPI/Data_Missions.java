@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.Form;
@@ -74,6 +75,19 @@ public class Data_Missions {
             return   MissionListDAO.addMission(id, nome, robot, player);
         } catch (Exception e) {
             return "Errore nella API";
+        }
+    }
+    
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response PUT_CompleteMission(Mission mission) {
+        try {
+
+            String risposta = MissionListDAO.completeMissions(mission.getId(), mission.getPunteggio() ,mission.getDataFine());
+            return Response.ok(risposta).build();
+
+        } catch (Exception e) {
+            return Response.ok(e.toString()).build();
         }
     }
 }

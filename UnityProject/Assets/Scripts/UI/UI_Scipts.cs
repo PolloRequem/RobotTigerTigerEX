@@ -7,13 +7,15 @@ using TMPro;
 public class UI_Scipts : MonoBehaviour
 {
 
-    private float score;
+    private int score;
 
     [SerializeField] private TextMeshProUGUI palyerText;
 
     [SerializeField] private TextMeshProUGUI missionText;
 
     [SerializeField] private TextMeshProUGUI scoreText;
+
+    [SerializeField] private TextMeshProUGUI modeText;
 
     [SerializeField] private TextMeshProUGUI coloreText;
     [SerializeField] private Image colorImage;
@@ -33,15 +35,11 @@ public class UI_Scipts : MonoBehaviour
         GameEventManager.instance.smallMtaken.onSmallMtaken += SmallMtaken_onSmallMtaken;
         GameEventManager.instance.enemyDestroyed.onEnemyDestroyed += EnemyDestroyed_onEnemyDestroyed;
         GameEventManager.instance.coinGain.onCoinGained += CoinGain_onCoinGained;
+    
         missionText.text = PlayerPrefsManger.PP_Mission_Copleted_Name();
         palyerText.text = PlayerPrefsManger.PP_Mission_Copleted_Player();
-       // coloreText.text = PlayerPrefs.GetString("coloreMissione");
-
-        //if (ColorUtility.TryParseHtmlString(PlayerPrefs.GetString("coloreMissione"), out targetColor))
-        //{
-        //    colorImage.color = targetColor;
-           
-        //}
+        modeText.text = GameStateManager.current_gameDifficulty.ToString();
+      
 
     }
 
@@ -77,6 +75,7 @@ public class UI_Scipts : MonoBehaviour
         score -= 250;
         scoreText.text = score.ToString();
 
+        #region non implementato nel gioco finale
         //if (heartCount == 1)
         //{
         //    cuore1.SetActive(false);
@@ -93,8 +92,12 @@ public class UI_Scipts : MonoBehaviour
         //    cuore3.SetActive(false);
         //    heartCount--;
         //}
+        #endregion
 
     }
 
-    
+    public  int getPunteggio()
+    {
+        return score;
+    }
 }

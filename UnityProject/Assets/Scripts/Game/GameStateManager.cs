@@ -7,17 +7,26 @@ public class GameStateManager : MonoBehaviour
 {
 
     private GameStates gameState = GameStates.NULLO;
+    public static GameDifficulty current_gameDifficulty = GameDifficulty.NORMAL;
 
-
-
+    [Header("Camera")]
     [SerializeField] private GameObject cameraPos;
-    [SerializeField] private float cameraSpeedUP = 1.5f;
-    [SerializeField] private float cameraSpeedDown = 1.0f;
+    [SerializeField] private float cameraSpeedUP;
+    [SerializeField] private float cameraSpeedDown;
 
+    [Header("GO")]
+    [SerializeField] private GameObject bandiere;
 
+    [Header("Menu")]
+    [SerializeField] private GameObject completeMenu;
     [SerializeField] private GameObject deadMenu;
     [SerializeField] private GameObject difficultyMenu;
 
+    [Header("Menu")]
+    [SerializeField] private UI_Scipts uiManger;
+
+    private bool completamentoAttivato = false;
+    private bool morteAttivata = false;
     public void Awake()
     {
         //
@@ -26,14 +35,48 @@ public class GameStateManager : MonoBehaviour
 
     public void Start()
     {
+        switch (current_gameDifficulty)
+        {
+            case GameDifficulty.EASY:
+
+                cameraSpeedUP = 2.5f;
+                cameraSpeedDown = 2f;
+                break;
+
+            case GameDifficulty.NORMAL:
+
+                cameraSpeedUP = 3.4f;
+                cameraSpeedDown = 3f;
+                break;
+
+            case GameDifficulty.HARD:
+
+                cameraSpeedUP = 4.5f;
+                cameraSpeedDown = 6f;
+                break;
+
+            default:
+                //metti le impostazioni normali
+                cameraSpeedUP = 4f;
+                cameraSpeedDown = 3.5f;
+                break;
+        }
+
+
         GameEventManager.instance.stardDownLevel.onStartDownLevel += StardDownLevel_onStartDownLevel;
         GameEventManager.instance.startUpLevel.onStartUpLevel += StartUpLevel_onStartUpLevel;
         GameEventManager.instance.freezeCam.onFreezeCam += FreezeCam_onFreezeCam;
         gameState = GameStates.STARTSTAGE;
 
         GameEventManager.instance.playerDead.onPlayerDead += PlayerDead_onPlayerDead;
+        GameEventManager.instance.endLevel.onEndLevel += EndLevel_onEndLevel;
 
 
+    }
+
+    private void EndLevel_onEndLevel()
+    {
+        gameState = GameStates.ENDSTAGE;
     }
 
     private void PlayerDead_onPlayerDead()
@@ -43,13 +86,14 @@ public class GameStateManager : MonoBehaviour
 
     private void FreezeCam_onFreezeCam()
     {
-        gameState = GameStates.ENDSTAGE;
+        gameState = GameStates.FEEZE;
 
     }
 
     private void StartUpLevel_onStartUpLevel()
     {
         gameState = GameStates.UPGAME;
+        bandiere.SetActive(true);
 
     }
 
@@ -57,7 +101,6 @@ public class GameStateManager : MonoBehaviour
     {
         gameState = GameStates.DOWNGAME;
 
-    
     }
 
     void Update()
@@ -76,7 +119,15 @@ public class GameStateManager : MonoBehaviour
                 break;
 
             case GameStates.ENDSTAGE:
-              
+
+                if (!completamentoAttivato)
+                {
+                    completeMenu.SetActive(true);
+                    Time.timeScale = 0f;
+                    completamentoAttivato = true;
+
+
+                }
                 break;
 
             case GameStates.FEEZE:
@@ -84,8 +135,14 @@ public class GameStateManager : MonoBehaviour
 
             case GameStates.GAMEOVER:
 
-                deadMenu.SetActive(true);
-                Time.timeScale = 0f;
+                if (!morteAttivata)
+                {
+                    deadMenu.SetActive(true);
+                    Time.timeScale = 0f;
+                    morteAttivata = true;
+
+
+                }
 
                 break;
 
@@ -112,39 +169,52 @@ public class GameStateManager : MonoBehaviour
     }
 
 
-
-
+    public void Button_CompleteAndExit()
+    {
+        PlayerPrefsManger.Current_Score = uiManger.getPunteggio();
+        SetReloadScene("Sim_Complete");
+    }
     public void Button_Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SetReloadScene(SceneManager.GetActiveScene().name);
     }
-
+    public void Button_Exit()
+    {
+        
+        SetReloadScene("Hub_CompleteMission");
+    }
     public void Button_ChangeDifficulty()
     {
         difficultyMenu.SetActive(true);
         deadMenu.SetActive(false);
     }
 
-    public void Button_Exit()
+
+    public void Button_ChangeDifficulty_TOEasy()
     {
-        SceneManager.LoadScene("Hub_CompleteMission");
+        current_gameDifficulty = GameDifficulty.EASY;
+        SetReloadScene(SceneManager.GetActiveScene().name);
+    }
+    public void Button_ChangeDifficulty_TONormal()
+    {
+        current_gameDifficulty = GameDifficulty.NORMAL;
+        SetReloadScene(SceneManager.GetActiveScene().name);
+    }
+    public void Button_ChangeDifficulty_TOHard()
+    {
+        current_gameDifficulty = GameDifficulty.HARD;
+        SetReloadScene(SceneManager.GetActiveScene().name);
+
+
+    }
+
+    private void SetReloadScene(string sceneName)
+    {
+        gameState = GameStates.NULLO;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(sceneName);
     }
 
 
-
-
-
-
-    private enum GameStates
-    {
-        NULLO,
-        FEEZE,
-        STARTSTAGE,
-        DOWNGAME,
-        STAGEFISHED,
-        UPGAME,
-        ENDSTAGE,
-        GAMEOVER
-    }
 
 }

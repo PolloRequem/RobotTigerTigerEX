@@ -8,14 +8,13 @@ public class LevelInstantioationCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.CompareTag("Player"))
         {
-
-         
             if (!startTriggerd)
-            {
-                GameEventManager.instance.endSimulationSM.EndSim();
-               //à startTriggerd = true;
+            {       
+                GameEventManager.instance.stardDownLevel.StartDownLevel();
+                startTriggerd = true;
                
             }
         }

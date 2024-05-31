@@ -25,6 +25,29 @@ public   class PlayerPrefsManger : MonoBehaviour
         return PlayerPrefs.GetString("ServerURL");
     }
 
+    public static string PP_Mission_Started_ID()
+    {
+        return PlayerPrefs.GetString("Mission_Started_ID");
+    }
+
+    public static string PP_Mission_Started_Name()
+    {
+        return PlayerPrefs.GetString("Mission_Started_Name");
+    }
+
+    public static string PP_Mission_Copleted_Name()
+    {
+        return PlayerPrefs.GetString("Mission_Completed_Name");
+    }
+
+    public static string PP_Mission_Copleted_Player()
+    {
+        return PP_LoginUsername();
+    }
+
+
+
+
     public static PlayerBean Current_playerBean_Customize;
 
     public static string defaultServerURL = "http://localhost:8170/WebServerAPIv9.1";

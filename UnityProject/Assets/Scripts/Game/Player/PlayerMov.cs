@@ -2,111 +2,103 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class PlayerMov : MonoBehaviour
 {
-    public float move_Speed = 6f;
-    public Sprite spriteSu;
-    public Sprite spriteGiu;
-    public Sprite spriteSinistra;
-    public Sprite spriteDestra;
-    private new Rigidbody2D rigidbody2D;
+
+    public float moveSpeed = 6f;
+    public Sprite spriteUp;
+    public Sprite spriteDown;
+    public Sprite spriteLeft;
+    public Sprite spriteRight;
+
+    private Rigidbody2D rb2D;
     private SpriteRenderer spriteRenderer;
-    Vector3 movDir3;
-    Vector2 movDir;
-    private Quaternion originalRotation;
-    private bool ruotatoaDestra = false;
-    private bool ruotatoaSinistra = false;
-    private bool ruotatoInAlto = false;
-    private bool ruotatoInBasso = false;
+    private Vector2 moveDirection;
+    private bool controlsEnabled = true;
+
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        //  rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        originalRotation = transform.rotation;
-       // GameEventManager.instance.startUpLevel.onStartUpLevel += StartUpLevel_onStartUpLevel;
+        GameEventManager.instance.endLevel.onEndLevel += EndLevel_onEndLevel;
+        GameEventManager.instance.startUpLevel.onStartUpLevel += StartUpLevel_onStartUpLevel1;
     }
 
-    private void StartUpLevel_onStartUpLevel()
+    private void StartUpLevel_onStartUpLevel1()
     {
-        move_Speed = 4f;
+        moveSpeed = 4f;
     }
+
+    private void EndLevel_onEndLevel()
+    {
+      
+       StartCoroutine( DisableControlsAndMoveUp());
+    }
+
+    private IEnumerator DisableControlsAndMoveUp()
+    {
+
+        spriteRenderer.sprite = spriteUp;
+        transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+        controlsEnabled = false;
+        yield return new WaitForSeconds(.5f);
+        moveDirection = Vector2.up; 
+    
+    
+    }
+
 
     void Update()
     {
-        Vector3 movDir = new Vector2();
-        if (Input.GetKey(KeyCode.D))
+        if (controlsEnabled)
         {
-            movDir.x += 1;
-            if (!ruotatoaDestra)
-            {
-                transform.rotation = originalRotation;
-                ruotatoaSinistra = false;
-                ruotatoInAlto = false;
-                ruotatoInBasso = false;
-                 transform.Rotate(Vector3.forward, 90f);
-                ruotatoaDestra = true;
-            }
-            spriteRenderer.sprite = spriteDestra;
-         
+            HandleInput();
         }
-      
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            movDir.x -= 1;
-            if (!ruotatoaSinistra)
-            {
-                transform.rotation = originalRotation;
-                ruotatoaDestra = false;    
-                ruotatoInAlto = false;
-                ruotatoInBasso = false;
-                transform.Rotate(Vector3.forward, -90f);
-                ruotatoaSinistra = true;
-            }
-            spriteRenderer.sprite = spriteSinistra;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            movDir.y -= 1;
-            
-            if (!ruotatoInAlto)
-            {
-                transform.rotation = originalRotation;
-                ruotatoaSinistra = false;
-                ruotatoaDestra = false;
-                ruotatoInBasso = false;
-                ruotatoInAlto = true;
-            }
-            spriteRenderer.sprite = spriteGiu;
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            movDir.y += 1;
-          
-            if (!ruotatoInBasso)
-            {
-                transform.rotation = originalRotation;
-                ruotatoaSinistra = false;
-                ruotatoaDestra = false;
-                ruotatoInAlto = false;
-                transform.Rotate(Vector3.forward, 180f);
-                ruotatoInBasso = true;
-            }
-            spriteRenderer.sprite = spriteGiu;
-        }
-        movDir3 = new Vector3(movDir.x, movDir.y).normalized;
-
-        if (movDir != Vector3.zero)
-        {
-        //    GameEventManager.instance.playerMoving.PlayerMoving();
-        }
-       
-       
     }
 
-    private void FixedUpdate()
+    private void HandleInput()
     {
-        rigidbody2D.MovePosition(transform.position + movDir3 * move_Speed * Time.fixedDeltaTime);
+        moveDirection = Vector2.zero;
+
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            moveDirection.x = 1;
+            SetSpriteAndRotation(spriteRight, 90f);
+        }
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            moveDirection.x = -1;
+            SetSpriteAndRotation(spriteLeft, -90f);
+        }
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            moveDirection.y = -1;
+            SetSpriteAndRotation(spriteDown, 0f);
+        }
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
+            moveDirection.y = 1;
+            SetSpriteAndRotation(spriteUp, 180f);
+        }
+    }
+
+    private void SetSpriteAndRotation(Sprite sprite, float rotationZ)
+    {
+        spriteRenderer.sprite = sprite;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+    }
+
+    void FixedUpdate()
+    {
+        MoveCharacter();
+    }
+
+    private void MoveCharacter()
+    {
+        Vector2 currentPosition = rb2D.position;
+        Vector2 newPosition = currentPosition + moveDirection * moveSpeed * Time.fixedDeltaTime;
+        rb2D.MovePosition(newPosition);
     }
 }

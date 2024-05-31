@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &743243953964428990
+--- !u!1001 &6284647860841202965
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -38,15 +38,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4946
+      value: -3.8015437
       objectReference: {fileID: 0}
     - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.5147
+      value: -11.1615
       objectReference: {fileID: 0}
     - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.10035449
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6596793140323824611, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -89,6 +89,10 @@ PrefabInstance:
       value: 0.725175
       objectReference: {fileID: 0}
     - target: {fileID: 7384070869927229778, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384070869927229778, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
       propertyPath: m_Offset.y
       value: 0.017130777
       objectReference: {fileID: 0}
@@ -118,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7998848980351506774, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
       propertyPath: m_Name
-      value: Blocco 4x4 Variant 1
+      value: Blocco 4x4 Variant 1 (23)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -126,20 +130,20 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7998848980351506774, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2223967009468115330}
+      addedObject: {fileID: 2496905090698837296}
   m_SourcePrefab: {fileID: 100100000, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
---- !u!1 &7300641436051535848 stripped
+--- !u!1 &4050445986076761155 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7998848980351506774, guid: 29f18808671492b4da219e4c729c6de7, type: 3}
-  m_PrefabInstance: {fileID: 743243953964428990}
+  m_PrefabInstance: {fileID: 6284647860841202965}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2223967009468115330
+--- !u!114 &2496905090698837296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7300641436051535848}
+  m_GameObject: {fileID: 4050445986076761155}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69bddd978310d347abb91bc3195f7d2, type: 3}

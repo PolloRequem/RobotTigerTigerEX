@@ -26,7 +26,7 @@ public class UI_Game_StartM : MonoBehaviour
 
         if (PlayerPrefs.GetString("_Start_MissionName")!=null)
         {
-            missionName.text = PlayerPrefs.GetString("_Start_MissionName");
+            missionName.text = PlayerPrefsManger.PP_Mission_Started_Name();
 
         }
         GameEventManager.instance.materialPickedUp.onMaterialPickedUp += MaterialPickedUp_onMaterialPickedUp;
@@ -53,7 +53,7 @@ public class UI_Game_StartM : MonoBehaviour
         isUnColoreScelto = true;
 
         coloreSelezionatoID = ColorMangaer.Color_EnumTOIDMaterial(obj.ToString());
-        print(coloreSelezionatoID);
+    
     }
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] private GameObject cameraPos;
     [SerializeField] private float cameraSpeedUP = 1.5f;
     [SerializeField] private float cameraSpeedDown = 1.0f;
+
+
+    [SerializeField] private GameObject deadMenu;
+    [SerializeField] private GameObject difficultyMenu;
 
     public void Awake()
     {
@@ -26,28 +31,33 @@ public class GameStateManager : MonoBehaviour
         GameEventManager.instance.freezeCam.onFreezeCam += FreezeCam_onFreezeCam;
         gameState = GameStates.STARTSTAGE;
 
+        GameEventManager.instance.playerDead.onPlayerDead += PlayerDead_onPlayerDead;
 
+
+    }
+
+    private void PlayerDead_onPlayerDead()
+    {
+        gameState = GameStates.GAMEOVER;
     }
 
     private void FreezeCam_onFreezeCam()
     {
         gameState = GameStates.ENDSTAGE;
 
-        print("CameraFreezeTrigger");
     }
 
     private void StartUpLevel_onStartUpLevel()
     {
         gameState = GameStates.UPGAME;
 
-        print("Inizia Up Level");
     }
 
     private void StardDownLevel_onStartDownLevel()
     {
         gameState = GameStates.DOWNGAME;
 
-        print("Inizia Down Level");
+    
     }
 
     void Update()
@@ -55,22 +65,35 @@ public class GameStateManager : MonoBehaviour
 
 
 
-        if (gameState == GameStates.DOWNGAME)
+        switch (gameState)
         {
+            case GameStates.DOWNGAME:
+                CameraVesoIlBasso();
+                break;
 
-            CameraVesoIlBasso();
+            case GameStates.UPGAME:
+                CameraVersoLAlto();
+                break;
 
+            case GameStates.ENDSTAGE:
+              
+                break;
+
+            case GameStates.FEEZE:
+                break;
+
+            case GameStates.GAMEOVER:
+
+                deadMenu.SetActive(true);
+                Time.timeScale = 0f;
+
+                break;
+
+            default:
+                gameState = GameStates.NULLO;
+                break;
         }
 
-        if (gameState == GameStates.UPGAME)
-        {
-            CameraVersoLAlto();
-        }
-
-        if (gameState == GameStates.ENDSTAGE)
-        {
-
-        }
 
 
     }
@@ -89,9 +112,33 @@ public class GameStateManager : MonoBehaviour
     }
 
 
+
+
+    public void Button_Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Button_ChangeDifficulty()
+    {
+        difficultyMenu.SetActive(true);
+        deadMenu.SetActive(false);
+    }
+
+    public void Button_Exit()
+    {
+        SceneManager.LoadScene("Hub_CompleteMission");
+    }
+
+
+
+
+
+
     private enum GameStates
     {
         NULLO,
+        FEEZE,
         STARTSTAGE,
         DOWNGAME,
         STAGEFISHED,

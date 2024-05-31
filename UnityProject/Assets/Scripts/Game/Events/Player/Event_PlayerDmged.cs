@@ -11,5 +11,6 @@ public class Event_PlayerDmged
     public void PlayerDmged()
     {
         onPlayerDmged?.Invoke();
+      
     }
 }

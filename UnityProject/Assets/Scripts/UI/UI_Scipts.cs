@@ -33,15 +33,15 @@ public class UI_Scipts : MonoBehaviour
         GameEventManager.instance.smallMtaken.onSmallMtaken += SmallMtaken_onSmallMtaken;
         GameEventManager.instance.enemyDestroyed.onEnemyDestroyed += EnemyDestroyed_onEnemyDestroyed;
         GameEventManager.instance.coinGain.onCoinGained += CoinGain_onCoinGained;
-        missionText.text = PlayerPrefs.GetString("idMissione");
-        palyerText.text = PlayerPrefs.GetString("Currentplayer");
-        coloreText.text = PlayerPrefs.GetString("coloreMissione");
+        missionText.text = PlayerPrefsManger.PP_Mission_Copleted_Name();
+        palyerText.text = PlayerPrefsManger.PP_Mission_Copleted_Player();
+       // coloreText.text = PlayerPrefs.GetString("coloreMissione");
 
-        if (ColorUtility.TryParseHtmlString(PlayerPrefs.GetString("coloreMissione"), out targetColor))
-        {
-            colorImage.color = targetColor;
+        //if (ColorUtility.TryParseHtmlString(PlayerPrefs.GetString("coloreMissione"), out targetColor))
+        //{
+        //    colorImage.color = targetColor;
            
-        }
+        //}
 
     }
 
@@ -53,18 +53,7 @@ public class UI_Scipts : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            GameEventManager.instance.freezeCam.FreezeCam();
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            GameEventManager.instance.stardDownLevel.StartDownLevel();
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            GameEventManager.instance.startUpLevel.EndLevel();
-        }
+    
     }
     private void OnDisable()
     {
@@ -85,22 +74,25 @@ public class UI_Scipts : MonoBehaviour
     }
     private void PlayerDmged_onPlayerDmged()
     {
-        if (heartCount == 1)
-        {
-            cuore1.SetActive(false);
-            heartCount--;
-        }
-      
-        if (heartCount == 2)
-        {
-            cuore2.SetActive(false);
-            heartCount--;
-        }
-        if (heartCount == 3)
-        {
-            cuore3.SetActive(false);
-            heartCount--;
-        }
+        score -= 250;
+        scoreText.text = score.ToString();
+
+        //if (heartCount == 1)
+        //{
+        //    cuore1.SetActive(false);
+        //    heartCount--;
+        //}
+
+        //if (heartCount == 2)
+        //{
+        //    cuore2.SetActive(false);
+        //    heartCount--;
+        //}
+        //if (heartCount == 3)
+        //{
+        //    cuore3.SetActive(false);
+        //    heartCount--;
+        //}
 
     }
 

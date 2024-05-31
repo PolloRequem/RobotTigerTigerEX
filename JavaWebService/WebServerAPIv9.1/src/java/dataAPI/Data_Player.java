@@ -26,10 +26,10 @@ import java.util.List;
 public class Data_Player {
 
     @GET
-    public Response getPlayer() {
+    public Response getPlayers() {
         ObjectMapper objectMapper = new ObjectMapper();
         String jsonData;
-        List<Player> elencoPlayer = PlayerDAO.getListMissions();
+        List<Player> elencoPlayer = PlayerDAO.getListPlayers();
 
         try {
             jsonData = objectMapper.writeValueAsString(elencoPlayer);
@@ -41,6 +41,22 @@ public class Data_Player {
 
     }
 
+    @GET
+    @Path("/{username}")
+    public Response getPlayer(@PathParam("username") String idPlayer) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonData;
+        Player elencoPlayer = PlayerDAO.getPlayer(idPlayer);
+
+        try {
+            jsonData = objectMapper.writeValueAsString(elencoPlayer);
+
+        } catch (JsonProcessingException ex) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+        }
+        return Response.ok(jsonData, MediaType.APPLICATION_JSON).build();
+    }
+
     @DELETE
     @Path("/{id}")
     public Response deletePlayer(@PathParam("id") String idPlayer) {
@@ -49,15 +65,29 @@ public class Data_Player {
 
         return Response.status(Response.Status.ACCEPTED).build();
     }
-    
+
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response PUT_Dipendente(Player player) {
+    public Response PUT_CustoMizePlayer(Player player) {
         try {
-           
-          String risposta = PlayerDAO.modifyPlayer(player.getId() , player.getUsername() ,  player.getRole(),player.getEmail());
-          return Response.ok(risposta).build();
-      
+
+            String risposta = PlayerDAO.modifyPlayer(player.getId(), player.getUsername(), player.getRole(), player.getEmail());
+            return Response.ok(risposta).build();
+
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @PUT
+    @Path("addPoints")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response PUT_addPints(Player player) {
+        try {
+
+            String risposta = PlayerDAO.addPointsPlayer(player.getId(), player.getTotalPoints(), player.getMissionsCompleted());
+            return Response.ok(risposta).build();
+
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }

@@ -48,6 +48,7 @@ public   class PlayerPrefsManger : MonoBehaviour
 
 
 
+    public static PlayerBean Current_playerLogged;
     public static PlayerBean Current_playerBean_Customize;
 
     public static string defaultServerURL = "http://localhost:8170/WebServerAPIv9.1";

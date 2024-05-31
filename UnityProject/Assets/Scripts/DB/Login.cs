@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.Networking;
 using System;
 using UnityEngine.SceneManagement;
-
+using Newtonsoft.Json;
 public class Login : MonoBehaviour
 {
-    private string url;
     UnityWebRequest webRequest;
     [SerializeField] TMP_InputField usernameField;
     [SerializeField] TMP_InputField passwordField;
@@ -18,7 +18,7 @@ public class Login : MonoBehaviour
     {
        
         StartCoroutine(POST_UserLogin());
-        url = "http://localhost:8161/WebServerAPI/api/hello?username="+usernameField.text+"&password="+passwordField.text;
+     
     }
 
     
@@ -46,18 +46,47 @@ public class Login : MonoBehaviour
         }
     }
 
+    private IEnumerator GET_UserLogged()
+    {
+       
+        using (webRequest = UnityWebRequest.Get(PlayerPrefsManger.PP_ServerURL() + "/data/players/"+ usernameField.text))
+        {
+            yield return webRequest.SendWebRequest();
+
+            switch (webRequest.result)
+            {
+                case UnityWebRequest.Result.ConnectionError:
+                case UnityWebRequest.Result.DataProcessingError:
+                case UnityWebRequest.Result.ProtocolError:
+                    Debug.LogError(String.Format("Something went wrong  {0}", webRequest.error));
+                    break;
+                case UnityWebRequest.Result.Success:
+
+                   PlayerBean playerLoggato = JsonConvert.DeserializeObject<PlayerBean>(webRequest.downloadHandler.text);
+                    PlayerPrefsManger.Current_playerLogged = playerLoggato;
+
+                    if (PlayerPrefsManger.Current_playerLogged.role.Equals("admin"))
+                    {
+                        AdminLoggato();
+                    }
+                    else
+                    {
+                        UtenteLoggato();
+                    }
+
+                    break;
+            }
+        }
+    }
+
+
 
     private bool TrovaUtente(string webRequestTEXT)
     {
         switch (webRequestTEXT)
         {
             case "1":
-                UtenteLoggato();
-                return true;
-                
-            case "2":
-                print("admin");
-                AdminLoggato();
+                StartCoroutine(GET_UserLogged());
                 return true;
 
             default:

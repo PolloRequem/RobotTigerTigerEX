@@ -14,19 +14,19 @@ public class LeaderBoard : MonoBehaviour
     private int leaderBoardMAXplayer = 5;
     private void Start()
     {
-        Call_GET_Missions();
+        Call_GET_Player();
     }
 
-    private void Call_GET_Missions()
+    private void Call_GET_Player()
     {
-        StartCoroutine(GET_Mission());
+        StartCoroutine(GET_Player());
     }
 
 
-    private IEnumerator GET_Mission()
+    private IEnumerator GET_Player()
     {
 
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(PlayerPrefsManger.PP_ServerURL() + "/data/missions"))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(PlayerPrefsManger.PP_ServerURL() + "/data/players"))
         {
             yield return webRequest.SendWebRequest();
 
@@ -40,44 +40,82 @@ public class LeaderBoard : MonoBehaviour
                     break;
                 case UnityWebRequest.Result.Success:
 
-                    List<Mission> playerJson = JsonConvert.DeserializeObject<List<Mission>>(webRequest.downloadHandler.text);
-                    Display_leaderBoardPlayer.UpdateVisual(sortAndSet(GetLeaderBoard(playerJson)));
+                    List<PlayerBean> playerJson = JsonConvert.DeserializeObject<List<PlayerBean>>(webRequest.downloadHandler.text);
+                    Display_leaderBoardPlayer.UpdateVisual(sortAndSet(playerJson));
 
-                    
                     break;
             }
         }
     }
-
-    private List<LeaderBoardPlayer> GetLeaderBoard(List<Mission> missions)
+    private List<PlayerBean> sortAndSet(List<PlayerBean> leaderBoards)
     {
-        var leaderBoard = new Dictionary<string, LeaderBoardPlayer>();
 
-        foreach (var mission in missions)
-        {
-            if (mission.dataFine != null)
-            {
-                if (leaderBoard.ContainsKey(mission.player))
-                {
-                    leaderBoard[mission.player].punteggioToT += mission.punteggio;
-                }
-                else
-                {
-                    leaderBoard[mission.player] = new LeaderBoardPlayer(mission.player, mission.punteggio);
-                }
-            }
-        }
+        List<PlayerBean> leaderBoardSorted = new List<PlayerBean>();
 
-        return leaderBoard.Values.ToList();
+
+
+
+        return leaderBoards.OrderByDescending(players => players.totalPoints).Take(leaderBoardMAXplayer).ToList();
     }
-    private List<LeaderBoardPlayer> sortAndSet(List<LeaderBoardPlayer> leaderBoards)
-    {
-       
-        List<LeaderBoardPlayer> leaderBoardSorted = new List<LeaderBoardPlayer>();
+
+    #region metodo utilizzato nelle versione precendeti a 0.7
+    //private IEnumerator GET_Mission()
+    //{
+
+    //    using (UnityWebRequest webRequest = UnityWebRequest.Get(PlayerPrefsManger.PP_ServerURL() + "/data/missions"))
+    //    {
+    //        yield return webRequest.SendWebRequest();
+
+    //        switch (webRequest.result)
+    //        {
+    //            case UnityWebRequest.Result.ConnectionError:
+    //            case UnityWebRequest.Result.DataProcessingError:
+    //            case UnityWebRequest.Result.ProtocolError:
+
+    //                print((String.Format("Something went wrong  {0}", webRequest.error)));
+    //                break;
+    //            case UnityWebRequest.Result.Success:
+
+    //                List<Mission> playerJson = JsonConvert.DeserializeObject<List<Mission>>(webRequest.downloadHandler.text);
+    //                Display_leaderBoardPlayer.UpdateVisual(sortAndSet(GetLeaderBoard(playerJson)));
 
 
-      
+    //                break;
+    //        }
+    //    }
+    //}
 
-        return leaderBoards.OrderByDescending(lbp => lbp.punteggioToT).Take(leaderBoardMAXplayer).ToList();
-    }
+    //private List<LeaderBoardPlayer> GetLeaderBoard(List<Mission> missions)
+    //{
+    //    var leaderBoard = new Dictionary<string, LeaderBoardPlayer>();
+
+    //    foreach (var mission in missions)
+    //    {
+    //        if (mission.dataFine != null)
+    //        {
+    //            if (leaderBoard.ContainsKey(mission.player))
+    //            {
+    //                leaderBoard[mission.player].punteggioToT += mission.punteggio;
+    //            }
+    //            else
+    //            {
+    //                leaderBoard[mission.player] = new LeaderBoardPlayer(mission.player, mission.punteggio);
+    //            }
+    //        }
+    //    }
+
+    //    return leaderBoard.Values.ToList();
+    //}
+    //private List<LeaderBoardPlayer> sortAndSet(List<LeaderBoardPlayer> leaderBoards)
+    //{
+
+    //    List<LeaderBoardPlayer> leaderBoardSorted = new List<LeaderBoardPlayer>();
+
+
+
+
+    //    return leaderBoards.OrderByDescending(lbp => lbp.punteggioToT).Take(leaderBoardMAXplayer).ToList();
+    //}
+
+    #endregion
 }

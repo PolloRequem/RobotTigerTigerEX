@@ -37,7 +37,7 @@ public   class PlayerPrefsManger : MonoBehaviour
 
     public static string PP_Mission_Copleted_Name()
     {
-        return PlayerPrefs.GetString("Mission_Completed_Name");
+        return PlayerPrefs.GetString("Mission_Comleted_Name");
     }
 
     public static string PP_Mission_Copleted_Player()
@@ -46,7 +46,7 @@ public   class PlayerPrefsManger : MonoBehaviour
     }
 
 
-
+    public static Mission Current_Mission_Complete;
 
     public static PlayerBean Current_playerLogged;
     public static PlayerBean Current_playerBean_Customize;

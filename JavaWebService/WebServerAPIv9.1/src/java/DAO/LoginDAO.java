@@ -47,9 +47,7 @@ public class LoginDAO {
                 return "Error#6 Wrong password or username";
             }
             
-            if (rs.getString(4).equals("admin")){
-                return "2";
-            }
+           
             return "1";
 
         } catch (SQLException ex) {

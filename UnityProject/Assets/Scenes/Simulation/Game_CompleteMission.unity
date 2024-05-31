@@ -28734,6 +28734,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 722254829}
     - target: {fileID: 4612691963040888293, guid: 979ced742f3de98449e3a9e9c584f92c, type: 3}
+      propertyPath: uiManger
+      value: 
+      objectReference: {fileID: 108602084}
+    - target: {fileID: 4612691963040888293, guid: 979ced742f3de98449e3a9e9c584f92c, type: 3}
       propertyPath: cameraPos
       value: 
       objectReference: {fileID: 1356151890}

@@ -12,29 +12,38 @@ using TMPro;
 public class Sim_CompleteManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI nomeMissioneTitolo;
-    [SerializeField] private TextMeshProUGUI nomePlayer;
+    [SerializeField] private TextMeshProUGUI nomePlayer1;
+    [SerializeField] private TextMeshProUGUI nomePlayer2;
 
     [SerializeField] private TextMeshProUGUI puntiOttenuti;
     [SerializeField] private TextMeshProUGUI puntiTotali;
+    [SerializeField] private TextMeshProUGUI missioniCompletate;
+
+    [SerializeField] private TextMeshProUGUI error_message;
 
 
 
-    public float duration = 2.0f;
+   
 
 
-
- 
     private void Start()
     {
         nomeMissioneTitolo.text = PlayerPrefsManger.PP_Mission_Copleted_Name();
-        nomePlayer.text = PlayerPrefsManger.PP_Mission_Copleted_Player();
-        StartCoroutine(IncrementPoints(10000));
+        nomePlayer1.text = PlayerPrefsManger.PP_Mission_Copleted_Player();
+        nomePlayer2.text = PlayerPrefsManger.PP_Mission_Copleted_Player();
+        StartCoroutine(IncrementNumbers(puntiOttenuti,1f ,0f ,PlayerPrefsManger.Current_Score));
+        StartCoroutine(IncrementNumbers(puntiTotali , 1f , 1.2f ,PlayerPrefsManger.Current_playerLogged.totalPoints+ PlayerPrefsManger.Current_Score));
+        StartCoroutine(IncrementNumbers(missioniCompletate , .5f, 2.2f, PlayerPrefsManger.Current_playerLogged.missionsCompleted + 1));
 
-
+        StartCoroutine(PUT_ModifyPlayer());
     }
 
-    private IEnumerator IncrementPoints(int targetPoints)
+    private IEnumerator IncrementNumbers(TextMeshProUGUI textToChange, float duration, float wiatforSeconds,  int targetPoints)
     {
+
+
+        yield return new WaitForSeconds(wiatforSeconds);
+
         int currentPoints = 0;
         float elapsedTime = 0f;
 
@@ -42,12 +51,13 @@ public class Sim_CompleteManager : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             currentPoints = Mathf.FloorToInt(Mathf.Lerp(0, targetPoints, elapsedTime / duration));
-            puntiOttenuti.text = currentPoints.ToString();
+           textToChange.text = currentPoints.ToString();
             yield return null;
         }
 
-        puntiOttenuti.text = targetPoints.ToString();
+        textToChange.text = targetPoints.ToString();
     }
+
 
 
 
@@ -58,8 +68,10 @@ public class Sim_CompleteManager : MonoBehaviour
         PlayerPrefsManger.Current_playerLogged.totalPoints += PlayerPrefsManger.Current_Score;
         PlayerPrefsManger.Current_playerLogged.missionsCompleted += 1;
 
-        using (UnityWebRequest webRequest = UnityWebRequest.Put(PlayerPrefsManger.PP_ServerURL() + "/players/addPoints", JsonConvert.SerializeObject(PlayerPrefsManger.Current_playerLogged)))
+        using (UnityWebRequest webRequest = UnityWebRequest.Put(PlayerPrefsManger.PP_ServerURL() + "/data/players/addPoints", JsonConvert.SerializeObject(PlayerPrefsManger.Current_playerLogged)))
         {
+
+            print(JsonConvert.SerializeObject(PlayerPrefsManger.Current_playerLogged));
             webRequest.SetRequestHeader("Content-Type", "application/json");
             yield return webRequest.SendWebRequest();
 
@@ -72,11 +84,63 @@ public class Sim_CompleteManager : MonoBehaviour
                     break;
                 case UnityWebRequest.Result.Success:
 
-                    print(webRequest.downloadHandler.text);
+                    if (webRequest.downloadHandler.text != "1")
+                    {
+                        error_message.text = "Something went worong";
+                    }
                     break;
             }
         }
     }
+
+    private IEnumerator PUT_ModifyMission()
+    {
+
+
+        PlayerPrefsManger.Current_Mission_Complete.dataFine = UnityDateTOSQLDate(System.DateTime.Today.ToShortDateString());
+
+        using (UnityWebRequest webRequest = UnityWebRequest.Put(PlayerPrefsManger.PP_ServerURL() + "/data/missions", JsonConvert.SerializeObject(PlayerPrefsManger.Current_Mission_Complete)))
+        {
+
+            print(JsonConvert.SerializeObject(PlayerPrefsManger.Current_playerLogged));
+            webRequest.SetRequestHeader("Content-Type", "application/json");
+            yield return webRequest.SendWebRequest();
+
+            switch (webRequest.result)
+            {
+                case UnityWebRequest.Result.ConnectionError:
+                case UnityWebRequest.Result.DataProcessingError:
+                case UnityWebRequest.Result.ProtocolError:
+                    Debug.LogError(String.Format("Something went wrong  {0}", webRequest.error));
+                    break;
+                case UnityWebRequest.Result.Success:
+
+                    if (webRequest.downloadHandler.text != "1")
+                    {
+                        error_message.text = "Something went worong";
+                    }
+                    break;
+            }
+        }
+    }
+
+    private string UnityDateTOSQLDate(string inputDate)
+    {
+        string[] dateParts = inputDate.Split('/');
+
+
+        string day = dateParts[0];
+
+        string month = dateParts[1];
+
+        string year = dateParts[2];
+
+
+
+        return $"{year}-{month}-{day}";
+
+    }
+
 }
 
 

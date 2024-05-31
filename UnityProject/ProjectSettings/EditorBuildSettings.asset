@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/_MainScene.unity
     guid: 62eca507902795444a25b6e54be175bc
   - enabled: 1
-    path: Assets/Scenes/GameScene1 1.unity
+    path: Assets/Scenes/Simulation/Game_CompleteMission.unity
     guid: 39f4237768ebf904ead6c34a647a6aab
   - enabled: 0
     path: Assets/Scenes/Game_StartMission.unity
@@ -47,6 +47,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mission/Mission_ritrovamenti.unity
     guid: a5248da5f2779fe4681ee425a4262c0c
+  - enabled: 1
+    path: Assets/Scenes/Simulation/CompleteMission/Sim_Complete.unity
+    guid: 6c9e5bd232737a24aaa5487090fa7320
   - enabled: 1
     path: Assets/Scenes/Simulation/Simulation.unity
     guid: ac0b44e9c5ad25443b6378689c216095

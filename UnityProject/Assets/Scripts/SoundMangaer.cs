@@ -9,7 +9,7 @@ public class SoundMangaer : MonoBehaviour
     public Sound[] sfxSounds, musicSounds;
     public AudioSource musicSource, sfxSource;
 
-    
+
 
     public void Start()
     {
@@ -19,6 +19,13 @@ public class SoundMangaer : MonoBehaviour
         GameEventManager.instance.smallMtaken.onSmallMtaken += SmallMtaken_onSmallMtaken;
         GameEventManager.instance.enemyDestroyed.onEnemyDestroyed += EnemyDestroyed_onEnemyDestroyed;
         GameEventManager.instance.coinGain.onCoinGained += CoinGain_onCoinGained;
+        GameEventManager.instance.endLevel.onEndLevel += EndLevel_onEndLevel;
+        
+    }
+
+    private void EndLevel_onEndLevel()
+    {
+        sfxSource.PlayOneShot(sfxSounds[6].GetAudioClip());
     }
 
     private void CoinGain_onCoinGained()

@@ -5,11 +5,11 @@ using MySql.Data.MySqlClient;
 
 public class MissionCopleteDBConnector : MonoBehaviour
 {
-    private string connectionString;
-    private MySqlConnection MS_Connection;
-    private MySqlCommand MS_command;
-    string query;
-    private float scorePoints = 0;
+ //   private string connectionString;
+ //   private MySqlConnection MS_Connection;
+ //   private MySqlCommand MS_command;
+ //   string query;
+ ////   private float scorePoints = 0;
 
 
     //public void  Start()

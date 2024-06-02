@@ -19,18 +19,18 @@ public class UI_Scipts : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI coloreText;
     [SerializeField] private Image colorImage;
-    private Color targetColor;
+ //   private Color targetColor;
 
     [SerializeField] private GameObject cuore1;
     [SerializeField] private GameObject cuore2;
     [SerializeField] private GameObject cuore3;
-    private float heartCount = 3;
+   // private float heartCount = 3;
 
 
     private void Start()
     {
-        score = 0;
-
+        score = ScoreOnStart();
+        scoreText.text = score.ToString();
         GameEventManager.instance.playerDmged.onPlayerDmged += PlayerDmged_onPlayerDmged;
         GameEventManager.instance.smallMtaken.onSmallMtaken += SmallMtaken_onSmallMtaken;
         GameEventManager.instance.enemyDestroyed.onEnemyDestroyed += EnemyDestroyed_onEnemyDestroyed;
@@ -43,16 +43,36 @@ public class UI_Scipts : MonoBehaviour
 
     }
 
+
+
+    private int ScoreOnStart()
+    {
+        switch (GameStateManager.current_gameDifficulty)
+        {
+            case GameDifficulty.EASY:
+                return -500;
+           
+            case GameDifficulty.NORMAL:
+                return 0;
+                
+            case GameDifficulty.HARD:
+                return 500;
+             
+            default:
+                return -999;
+
+
+        }
+    }
+
+
     private void CoinGain_onCoinGained()
     {
         score += 100;
         scoreText.text = score.ToString();
     }
 
-    private void Update()
-    {
-    
-    }
+ 
     private void OnDisable()
     {
         GameEventManager.instance.playerDmged.onPlayerDmged -= PlayerDmged_onPlayerDmged;

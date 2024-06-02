@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PreLogin/MainScene.unity
     guid: b34aa0de49c800648a27545fc2d4cfd4
+  - enabled: 1
+    path: Assets/Scenes/PreLogin/NoLoginGame_CompleteMission.unity
+    guid: f90c10c883bf24348a4bb3dba4848c6d
   - enabled: 0
     path: Assets/Scenes/Prove/GameScene1.unity
     guid: 6bcd5d12fefcdba40aa3e80402cdbaba

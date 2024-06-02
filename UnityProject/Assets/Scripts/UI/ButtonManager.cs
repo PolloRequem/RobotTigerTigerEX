@@ -40,6 +40,11 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("Scene_Info");
     }
 
+    public void GOTO_NoLoginGame()
+    {
+        SceneManager.LoadScene("NoLoginGame_CompleteMission");
+    }
+
     public void GOTO_Hub_Players()
     {
         SceneManager.LoadScene("Hub_Players");

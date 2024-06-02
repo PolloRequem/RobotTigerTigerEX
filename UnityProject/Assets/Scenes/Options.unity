@@ -380,6 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverURL: {fileID: 352807281}
   imageChek_ChangeServerUrl: {fileID: 1516001534}
+  fullScreenToggle: {fileID: 1527392107}
 --- !u!4 &400178577
 Transform:
   m_ObjectHideFlags: 0
@@ -955,6 +956,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516001534}
   m_CullTransparentMesh: 1
+--- !u!114 &1527392107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2831788979087508134, guid: 6a0e60d59b824664695f4363494860fa, type: 3}
+  m_PrefabInstance: {fileID: 4596610955009756618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1537487958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1844,6 +1856,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1982553954}
     m_Modifications:
+    - target: {fileID: 2831788979087508134, guid: 6a0e60d59b824664695f4363494860fa, type: 3}
+      propertyPath: m_IsOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2831788979087508134, guid: 6a0e60d59b824664695f4363494860fa, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

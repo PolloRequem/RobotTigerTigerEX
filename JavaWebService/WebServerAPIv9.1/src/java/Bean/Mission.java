@@ -27,8 +27,7 @@ public class Mission {
     private String dataInizio;
     @JsonProperty("dataFine")
     private String dataFine;
-    @JsonProperty("completata")
-    private boolean completata;
+
 
     public Mission() {
     }
@@ -37,10 +36,10 @@ public class Mission {
     
     
     
-    public Mission(String id, int punteggio, boolean completata, String nome, String robot, String dataInizio, String dataFine, String player) {
+    public Mission(String id, int punteggio, String nome, String robot, String dataInizio, String dataFine, String player) {
         this.id = id;
         this.punteggio = punteggio;
-        this.completata = completata;
+    
         this.nome = nome;
         this.robot = robot;
         this.dataInizio = dataInizio;
@@ -66,9 +65,7 @@ public class Mission {
         return punteggio;
     }
 
-    public boolean isCompletata() {
-        return completata;
-    }
+ 
 
     public String getNome() {
         return nome;
@@ -94,9 +91,6 @@ public class Mission {
         this.punteggio = punteggio;
     }
 
-    public void setCompletata(boolean completata) {
-        this.completata = completata;
-    }
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -124,7 +118,7 @@ public class Mission {
 
     @Override
     public String toString() {
-        return "Mission{" + "id=" + id + ", nome=" + nome + ", robot=" + robot + ", player=" + player + ", punteggio=" + punteggio + ", dataInizio=" + dataInizio + ", dataFine=" + dataFine + ", completata=" + completata + '}';
+        return "Mission{" + "id=" + id + ", nome=" + nome + ", robot=" + robot + ", player=" + player + ", punteggio=" + punteggio + ", dataInizio=" + dataInizio + ", dataFine=" + dataFine + '}';
     }
 
 }

@@ -89,12 +89,12 @@ public class MissionListDAO {
                 String robot = rs.getString("robot");
                 String dataInizio = rs.getString("dataInizio");
                 String dataFine = rs.getString("dataFine");
-                boolean completata  = rs.getBoolean("completata");
+               
                 int punteggio = rs.getInt("punteggio");
                 String player = rs.getString("player");
                 
  
-             elencoMisisoni.add(new Mission(seriale, punteggio, completata, nome, robot, dataInizio, dataFine, player));
+             elencoMisisoni.add(new Mission(seriale, punteggio,  nome, robot, dataInizio, dataFine, player));
             }
 
             return elencoMisisoni; 

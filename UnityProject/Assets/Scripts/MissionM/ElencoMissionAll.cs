@@ -72,7 +72,7 @@ public class ElencoMissionAll : MonoBehaviour
 
         foreach (Mission mission in jsonMissions)
         {
-            if (mission.completata == false && mission.player == PlayerPrefs.GetString("Login_UserName"))
+            if (mission.dataFine == null && mission.player == PlayerPrefs.GetString("Login_UserName"))
             {
                 missionDummyList.Add(mission);
             }
@@ -90,7 +90,7 @@ public class ElencoMissionAll : MonoBehaviour
 
         foreach (Mission mission in jsonMissions)
         {
-            if (mission.completata == false)
+            if (mission.dataFine == null)
             {
                 missionDummyList.Add(mission);
             }

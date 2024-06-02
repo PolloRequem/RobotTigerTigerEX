@@ -34,7 +34,7 @@ public class OptionsManager : MonoBehaviour
     }
 
 
-    private void Update()
+    private void Start()
     {
         fullScreenToggle.isOn = Screen.fullScreen;
     }

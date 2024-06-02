@@ -58,7 +58,7 @@ public class ElencoRitrovamenti : MonoBehaviour
 
         foreach (Ritrovamenti ritrovamento in ritrovamentiJson)
         {
-            if (ritrovamento.missione == PlayerPrefs.GetString("IDMission_Started"))
+            if (ritrovamento.missione == PlayerPrefsManger.PP_Mission_Started_ID())
             {
                 ritrovamentiDummyList.Add(ritrovamento);
             }

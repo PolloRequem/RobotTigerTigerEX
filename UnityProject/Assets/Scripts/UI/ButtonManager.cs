@@ -10,6 +10,11 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("Options");
     }
+
+    public void GOTO_Profile()
+    {
+        SceneManager.LoadScene("Profile");
+    }
     public void QUIT()
     {
         Application.Quit();
@@ -91,5 +96,7 @@ public class ButtonManager : MonoBehaviour
     {
         Screen.fullScreen = isFullScreen;
     }
+
+    
 
 }

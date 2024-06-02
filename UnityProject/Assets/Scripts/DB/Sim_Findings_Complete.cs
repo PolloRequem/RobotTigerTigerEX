@@ -22,7 +22,7 @@ public class Sim_Findings_Complete : MonoBehaviour
     private IEnumerator POST_RegistraFinding()
     {
         WWWForm form = new WWWForm();
-        form.AddField("missione",  PlayerPrefs.GetString("IDMission_Started"));
+        form.AddField("missione", PlayerPrefsManger.PP_Mission_Started_ID());            
         form.AddField("materiale", UI_Game_StartM.coloreSelezionatoID);
         form.AddField("data", UnityDateTOSQLDate(System.DateTime.Today.ToShortDateString()));
         form.AddField("parziali", getIDRandoNumber());

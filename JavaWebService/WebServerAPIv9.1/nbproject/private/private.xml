@@ -3,7 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/DAO/PlayerDAO.java</file>
+            <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/DAO/MissionListDAO.java</file>
             <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/DAO/RobotsListDAO.java</file>
+            <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/authenticatorAPI/Authentication_LoginAPI.java</file>
+            <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/DAO/LoginDAO.java</file>
+            <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/dataAPI/Data_Player.java</file>
+            <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/authenticatorAPI/Authentication_RegistrationAPI.java</file>
+            <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/Bean/Ritrovamenti.java</file>
+            <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/dataAPI/Data_Missions.java</file>
+            <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/Bean/Mission.java</file>
+            <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/Bean/Player.java</file>
             <file>file:/D:/RobotTigerTigerEX/RobotTigerTigerEX/JavaWebService/WebServerAPIv9.1/src/java/DAO/RitrovamentiDAO.java</file>
         </group>
     </open-files>

@@ -44,11 +44,26 @@ public class ElencoMissionAll : MonoBehaviour
                 case UnityWebRequest.Result.Success:
 
                     List<Mission> missionsJson = JsonConvert.DeserializeObject<List<Mission>>(webRequest.downloadHandler.text);
-                    uiDiplayer.UpdateVisualAll(missionsJson);
+                    uiDiplayer.UpdateVisualAll(MettiNonCompletata(missionsJson));
 
                     break;
             }
         }
+    }
+
+    private List<Mission> MettiNonCompletata(List<Mission> jsonMissions)
+    {
+        List<Mission> missionDummyList = new List<Mission>();
+
+        foreach (Mission mission in jsonMissions)
+        {
+            if (mission.dataFine == null)
+            {
+                mission.dataFine = "Not Completed";
+            }
+            missionDummyList.Add(mission);
+        }
+        return missionDummyList;
     }
 
     private List<Mission> TogliCompletatiEthisUser(List<Mission> jsonMissions)

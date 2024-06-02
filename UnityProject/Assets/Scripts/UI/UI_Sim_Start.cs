@@ -180,9 +180,10 @@ public class UI_Sim_Start : MonoBehaviour
         {
             case "1":
 
-                PlayerPrefs.SetString("IDMission_Started", missionID.text);
-                PlayerPrefs.SetString("NameMission_Started", missionName.text);
-                
+                PlayerPrefs.SetString("Mission_Started_ID", missionID.text);
+                PlayerPrefs.SetString("Mission_Started_Name", missionName.text);
+
+
                 PlayerPrefs.Save();
                 //  SceneManager.LoadScene("Game_StartMission");
                 SceneManager.LoadScene("Mission_ritrovamenti");

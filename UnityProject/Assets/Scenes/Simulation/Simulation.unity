@@ -516,6 +516,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -820732653122750354, guid: a17e10b1a7d61e944bd64f76ea83321d, type: 3}
     - target: {fileID: 3092493231548948842, guid: 8d9f39bb74c0536419f216fe9c87eb14, type: 3}
+      propertyPath: spriteUp
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b54bcac0a9f9d449a101f6d13326af7, type: 3}
+    - target: {fileID: 3092493231548948842, guid: 8d9f39bb74c0536419f216fe9c87eb14, type: 3}
       propertyPath: spriteGiu
       value: 
       objectReference: {fileID: 21300000, guid: 2b54bcac0a9f9d449a101f6d13326af7, type: 3}
@@ -523,6 +527,18 @@ PrefabInstance:
       propertyPath: move_Speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3092493231548948842, guid: 8d9f39bb74c0536419f216fe9c87eb14, type: 3}
+      propertyPath: spriteDown
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b54bcac0a9f9d449a101f6d13326af7, type: 3}
+    - target: {fileID: 3092493231548948842, guid: 8d9f39bb74c0536419f216fe9c87eb14, type: 3}
+      propertyPath: spriteLeft
+      value: 
+      objectReference: {fileID: 21300000, guid: a1a265cae65f2d1449ac315577cf4574, type: 3}
+    - target: {fileID: 3092493231548948842, guid: 8d9f39bb74c0536419f216fe9c87eb14, type: 3}
+      propertyPath: spriteRight
+      value: 
+      objectReference: {fileID: 21300000, guid: 957186fbb2683714289ae4097b7b2b95, type: 3}
     - target: {fileID: 3635295250055455958, guid: 8d9f39bb74c0536419f216fe9c87eb14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.5

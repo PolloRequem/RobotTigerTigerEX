@@ -13,35 +13,45 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
     [Header("PlayerInfo")]
     [SerializeField] private TextMeshProUGUI text_player_username;
     [SerializeField] private TextMeshProUGUI text_player_role;
+    [SerializeField] private TextMeshProUGUI text_player_email;
 
     [Header("ChangePanel")]
     [SerializeField] private GameObject GO_changeUser;
     [SerializeField] private GameObject GO_changeRole;
+    [SerializeField] private GameObject GO_changeEmail;
     [SerializeField] private GameObject GO_changePassword;
 
     [Header("Input")]
     [SerializeField] private TMP_Dropdown roleSeletc;
     [SerializeField] private TMP_InputField userInputField;
+    [SerializeField] private TMP_InputField emailInputField;
     [SerializeField] private TMP_InputField passwordInputField;
 
     [Header("Bottoni")]
     [SerializeField] private GameObject button_ChangeUser;
     [SerializeField] private GameObject button_ChangeRole;
+    [SerializeField] private GameObject button_ChangeEmail;
     [SerializeField] private Button button_ResetPassword;
 
+    [Header("ConfirmButton")]
+    [SerializeField] private Button confirmButton;
     [Header("Errori")]
     [SerializeField] private TextMeshProUGUI errorMessage;
 
     private PlayerBean newPlayer;
 
-    private bool isChangeRuoloPressed;
-   
+    private bool isChangeRuoloPressed = false;
+    private bool isChangeUserPressed = false;
+    private bool isChangeEmailPressed = false;
+    private bool isChangePasswordPressed = false;
+
+
     private void Start()
     {
      
         text_player_role.text = PlayerPrefsManger.Current_playerBean_Customize.role;
         text_player_username.text = PlayerPrefsManger.Current_playerBean_Customize.username;
-        
+        text_player_email.text = PlayerPrefsManger.Current_playerBean_Customize.email;
         newPlayer = PlayerPrefsManger.Current_playerBean_Customize;
 
         button_ResetPassword.interactable = false;
@@ -49,14 +59,45 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
        
     }
 
+    private void Update()
+    {
+        if(UserInputFieldValido() && EmailInputFieldValido())
+        {
+
+            confirmButton.interactable = true;
+        }
+        else
+        {
+            confirmButton.interactable = false;
+        }
+    }
 
 
+    private bool UserInputFieldValido()
+    {
+        if (!isChangeUserPressed) { return true; }
+        print(userInputField.text.Length);
+        if (userInputField.text.Length >= 3) { return true; }
+        else { return false; }
 
+    }
+
+    private bool EmailInputFieldValido()
+    {
+        if (!isChangeEmailPressed) { return true; }
+        print(emailInputField.text.Length);
+        if(emailInputField.text.Length >= 4) { return true; }
+        else { return false; }
+    }
+
+
+    public void cambiaEmail()
+    {
+        newPlayer.email = emailInputField.text;
+    }
     public void cambiaNome()
     {
         newPlayer.username = userInputField.text;
-
-
        
     }
 
@@ -70,6 +111,7 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
     {
         button_ChangeUser.SetActive(false);
         GO_changeUser.SetActive(true);
+        isChangeUserPressed = true;
       
     }
 
@@ -77,14 +119,23 @@ public class Mangaer_Player_CustomizePlayer : MonoBehaviour
     {
         button_ChangeRole.SetActive(false);
         GO_changeRole.SetActive(true);
+        isChangeRuoloPressed = true;
        
+    }
+
+    public void Button_ChangeEmail()
+    {
+        button_ChangeEmail.SetActive(false);
+        GO_changeEmail.SetActive(true);
+        isChangeEmailPressed = true;
+            
     }
 
 
     public void Button_ChangePassword()
     {
         GO_changePassword.SetActive(true);
-
+        isChangePasswordPressed = true;
     }
 
 

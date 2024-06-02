@@ -17,7 +17,7 @@ public class ElencoRitrovamenti : MonoBehaviour
     public void Start()
     {
         Call_GET_Ritrovamenti();
-        missioneNameTitle.text = PlayerPrefs.GetString("NameMission_Started");
+        missioneNameTitle.text = PlayerPrefsManger.PP_Mission_Started_Name();
 
 
     }

@@ -97,6 +97,10 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("Test_testScene1");
     }
 
+    public void GOTO_ProfilePage()
+    {
+        SceneManager.LoadScene("ProfilePage");
+    }
     public void SetFullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;

@@ -67,7 +67,6 @@ Library: D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Da
 --linker-options=PdbAltPath="RobotTigerTiger_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\Burst
---debug=Full
 --key-folder=D:/2023.2.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Library\Burst
 --output=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
@@ -144,7 +143,6 @@ Library: D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Da
 --linker-options=PdbAltPath="RobotTigerTiger_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\Burst
---debug=Full
 --key-folder=D:/2023.2.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Library\Burst
 --output=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
@@ -219,7 +217,6 @@ Library: D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Da
 --linker-options=PdbAltPath="RobotTigerTiger_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\Burst
---debug=Full
 --key-folder=D:/2023.2.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Library\Burst
 --output=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
@@ -332,7 +329,6 @@ Library: D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Da
 --linker-options=PdbAltPath="RobotTigerTiger_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\Burst
---debug=Full
 --key-folder=D:/2023.2.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Library\Burst
 --output=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated

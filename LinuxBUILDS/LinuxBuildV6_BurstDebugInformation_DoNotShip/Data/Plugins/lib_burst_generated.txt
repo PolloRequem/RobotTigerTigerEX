@@ -66,7 +66,6 @@ Library: D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Da
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\Burst
---debug=Full
 --key-folder=D:/2023.2.8f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport
 --decode-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Library\Burst
 --output=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Data\Plugins\lib_burst_generated
@@ -142,7 +141,6 @@ Library: D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Da
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\Burst
---debug=Full
 --key-folder=D:/2023.2.8f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport
 --decode-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Library\Burst
 --output=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Data\Plugins\lib_burst_generated
@@ -216,7 +214,6 @@ Library: D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Da
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\Burst
---debug=Full
 --key-folder=D:/2023.2.8f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport
 --decode-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Library\Burst
 --output=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Data\Plugins\lib_burst_generated
@@ -328,7 +325,6 @@ Library: D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Da
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\Burst
---debug=Full
 --key-folder=D:/2023.2.8f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport
 --decode-folder=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Library\Burst
 --output=D:\RobotTigerTigerEX\RobotTigerTigerEX\UnityProject\Temp\BurstOutput\Data\Plugins\lib_burst_generated
